@@ -57,12 +57,12 @@
   header {
     background-color:#270027;
     color:#fff;
-    padding-top: 20px;
-    padding-bottom: 12px;
+    padding-top: 12px;
+    padding-bottom: 6px;
 }
 
 header .logo-wrapper img {
-  max-height: 35px;
+  max-height: 60px;
 }
 header .menu-links {
     padding-top:5px;
@@ -110,7 +110,6 @@ header .menu-links a:hover, header .menu-links a:focus {
 #home h1 {
   margin-bottom: 20px;
   line-height: 40px;
-  font-size: 6em;
   color: #333;
   font-family: arizonia;
   /*text-transform:uppercase;*/
