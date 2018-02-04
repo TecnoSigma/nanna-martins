@@ -1,19 +1,4 @@
-﻿/*=============================================================
-    Authour URL: www.designbootstrap.com
-    
-    http://www.designbootstrap.com/
-
-    License: MIT
-
-    http://opensource.org/licenses/MIT
-
-    100% Free To use For Personal And Commercial Use.
-
-    IN EXCHANGE JUST TELL PEOPLE ABOUT THIS WEBSITE
-   
-    ========================================================  */
-
-/*================================
+﻿/*================================
     GOOGLE FONT
     ==================================*/
 
@@ -54,11 +39,18 @@
   HEADER STYLES
   ==================================*/
 
+header {
+  background-color: #270027;
+  color: #fff;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+@media screen and (max-width: 700px) {
   header {
-    background-color:#270027;
-    color:#fff;
-    padding-top: 12px;
-    padding-bottom: 6px;
+    padding-top: 15px;
+    padding-bottom: 1px;
+  }
 }
 
 header .logo-wrapper img {
@@ -87,18 +79,21 @@ header .menu-links a:hover, header .menu-links a:focus {
    transition: all 0.2s ease;
 }
 
-
+.background-brand {
+  background-color: #270027;
+  border: 0px;
+}
 
 /*================================
   HOME SECTION STYLES
   ==================================*/
 
   #home {
-    background: url(../img/home.jpg) no-repeat center center; 
+    background: url(../img/home.jpg) no-repeat center center;
     padding: 0;
     -webkit-background-size: cover;
     background-size: cover;
-    -moz-background-size: cover;    
+    -moz-background-size: cover;
 }
 
 #home .overlay {
@@ -147,10 +142,10 @@ header .menu-links a:hover, header .menu-links a:focus {
      margin:25px 5px 5px 0px;
  }
 
- .btn-one {   
+ .btn-one {
     background-color: transparent;
-    border:5px solid #48A5FF; 
-    color:#fff;       
+    border:5px solid #48A5FF;
+    color:#fff;
 
 }
 .btn-one:hover {
@@ -159,10 +154,10 @@ header .menu-links a:hover, header .menu-links a:focus {
    text-decoration:none;
 }
 
-.btn-two {   
+.btn-two {
     background-color: #48A5FF;
-    border:5px solid #48A5FF; 
-    color:#fff;       
+    border:5px solid #48A5FF;
+    color:#fff;
 
 }
 .btn-two:hover {
@@ -170,11 +165,11 @@ header .menu-links a:hover, header .menu-links a:focus {
    color:#fff;
    text-decoration:none;
 }
-.btn-three {   
+.btn-three {
 
     background-color:transparent;
-    border:5px solid #737373; 
-    color:#000;       
+    border:5px solid #737373;
+    color:#000;
 
 }
 .btn-three:hover {
@@ -203,11 +198,11 @@ header .menu-links a:hover, header .menu-links a:focus {
     ==================================*/
 
     #clients {
-        background: url(../img/clients.jpg) no-repeat center center; 
+        background: url(../img/clients.jpg) no-repeat center center;
         padding: 0;
         -webkit-background-size: cover;
         background-size: cover;
-        -moz-background-size: cover;    
+        -moz-background-size: cover;
     }
 
     #clients .overlay {
@@ -313,11 +308,11 @@ header .menu-links a:hover, header .menu-links a:focus {
     ==================================*/
 
     #contact {
-        background: url(../img/contact.jpg) no-repeat center center; 
+        background: url(../img/contact.jpg) no-repeat center center;
         padding: 0;
         -webkit-background-size: cover;
         background-size: cover;
-        -moz-background-size: cover;    
+        -moz-background-size: cover;
     }
 
     #contact .overlay {
@@ -381,3 +376,22 @@ header .menu-links a:hover, header .menu-links a:focus {
         font-size: 3em;
         color: #fff;
     }
+
+  /*================================
+      MENU
+      ============================  */
+
+  #menu {
+    padding-bottom: 10px;
+    position: absolute;
+  }
+
+  #menu ul li {
+    display: inline;
+    padding-right: 50px;
+  }
+
+  #menu ul li a {
+    color: #fff;
+    text-decoration: none;
+  }
