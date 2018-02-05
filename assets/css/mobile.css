@@ -1,0 +1,58 @@
+@media screen and (max-width: 700px) {
+  header {
+    padding-top: 15px;
+    padding-bottom: 1px;
+  }
+
+  header nav div div a img {
+    width: 50%;
+  }
+
+  #social-medias {
+    top: 0;
+    position: absolute;
+    left: 88%;
+  }
+
+  #mobile-menu {
+    display: initial;
+    background: #591a59;
+    margin-top: 0px;
+    position: absolute;
+    height: 100%;
+  }
+
+  #mobile-menu a {
+    position: absolute;
+    left: 92%;
+    text-decoration: none;
+  }
+
+  #mobile-menu a span {
+    display: block;
+    background-color: #270027;
+    border-radius: 5px;
+    padding: 5px;
+    color: #fff;
+    font-size: 30px;
+  }
+
+  #items-menu {
+    display: none;
+    position: absolute;
+    width: 30%;
+    padding-top: 80px;
+    line-height: 40px;
+  }
+
+  #items-menu a {
+    text-decoration: none;
+  }
+
+  #items-menu a p {
+    font-variant: small-caps;
+    color: #fff;
+    font-size: 18px;
+  }
+}
+mobilee
