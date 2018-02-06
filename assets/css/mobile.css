@@ -4,10 +4,6 @@
     padding-bottom: 1px;
   }
 
-  header nav div div a img {
-    width: 50%;
-  }
-
   #social-medias {
     top: 0;
     position: absolute;
@@ -31,7 +27,10 @@
   #mobile-menu a span {
     display: block;
     background-color: #270027;
-    border-radius: 5px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
     padding: 5px;
     color: #fff;
     font-size: 30px;
