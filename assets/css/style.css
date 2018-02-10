@@ -422,3 +422,13 @@ header .menu-links a:hover, header .menu-links a:focus {
     text-decoration: none;
     color: #fff;
   }
+
+  #display {
+    z-index: -1;
+    margin-top: -70px;
+    height: 600px;
+    background-color: #fff;
+    opacity: 0.8;
+    filter: alpha(opacity=80);
+    border-radius: 10px;
+  }

@@ -12,4 +12,12 @@ $(document).ready(function(){
     $("#push-mobile-menu").css("display", "initial");
     $("#items-menu").fadeIn("slow");
   });
+
+  getCurrentYear();
 });
+
+function getCurrentYear() {
+  var date = new Date();
+  var year = date.getFullYear();
+  document.getElementById("copyright").innerHTML = year;
+}
