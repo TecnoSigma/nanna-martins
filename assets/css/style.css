@@ -429,6 +429,23 @@ header .menu-links a:hover, header .menu-links a:focus {
     height: 600px;
     background-color: #fff;
     opacity: 0.8;
-    filter: alpha(opacity=80);
+    filter: alpha(opacity = 80);
+    border-radius: 10px;
+  }
+
+  #profile {
+    margin-top: 20px;
+  }
+
+  #profile p:nth-child(2) {
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  #profile img {
+    float: left;
+    width: 50%;
+    height: 50%;
+    padding-right: 20px;
     border-radius: 10px;
   }
