@@ -390,9 +390,24 @@ header .menu-links a:hover, header .menu-links a:focus {
   }
 
   #social-medias {
+    top: 50px;
+    position: absolute;
+    left: 80%;
+  }
+
+  #social-medias a {
+    padding-left: 10px;
+  }
+
+  /* #social-medias {
     top: 0;
     position: absolute;
-    left: 95%;
+    left: 88%;
+  } */
+
+  #social-medias a img {
+    width: 25px;
+    height: 25px;
   }
 
   #mobile-menu {
