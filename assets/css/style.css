@@ -392,18 +392,12 @@ header .menu-links a:hover, header .menu-links a:focus {
   #social-medias {
     top: 50px;
     position: absolute;
-    left: 80%;
+    left: 83%;
   }
 
   #social-medias a {
     padding-left: 10px;
   }
-
-  /* #social-medias {
-    top: 0;
-    position: absolute;
-    left: 88%;
-  } */
 
   #social-medias a img {
     width: 25px;
@@ -412,4 +406,19 @@ header .menu-links a:hover, header .menu-links a:focus {
 
   #mobile-menu {
     display: none;
+  }
+
+  /*================================
+      LANGUAGE
+    ================================ */
+
+  #language {
+    top: 0;
+    position: absolute;
+    left: 89%;
+  }
+
+  #language a {
+    text-decoration: none;
+    color: #fff;
   }
