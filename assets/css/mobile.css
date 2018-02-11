@@ -85,23 +85,27 @@
   }
 
   #mobile-social-medias a:nth-child(1) {
-    margin-left: -45px;
+    margin-left: -48px;
   }
 
   #mobile-social-medias a:nth-child(2) {
-    margin-left: 0px;
+    margin-left: -12px;
   }
 
   #mobile-social-medias a:nth-child(3) {
-    margin-left: 45px;
+    margin-left: 24px;
   }
 
   #mobile-social-medias a:nth-child(4) {
-    margin-left: 90px;
+    margin-left: 60px;
   }
 
   #mobile-social-medias a:nth-child(5) {
-    margin-left: 135px;
+    margin-left: 96px;
+  }
+
+  #mobile-social-medias a:nth-child(6) {
+    margin-left: 132px;
   }
 
   #social-medias {
