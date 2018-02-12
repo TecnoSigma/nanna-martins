@@ -426,26 +426,35 @@ header .menu-links a:hover, header .menu-links a:focus {
   #display {
     z-index: -1;
     margin-top: -70px;
-    height: 600px;
+    height: 100%;
     background-color: #fff;
-    opacity: 0.8;
-    filter: alpha(opacity = 80);
+    opacity: 0.9;
+    filter: alpha(opacity = 90);
     border-radius: 10px;
   }
 
   #profile {
-    margin-top: 20px;
+    margin: 50px;
+    text-align: justify;
   }
 
-  #profile p:nth-child(2) {
+  #profile p {
+    padding-bottom: 20px;
+    line-height: 40px;
     font-size: 20px;
-    font-weight: bold;
+    font-weight: 100;
+    font-variant: small-caps;
   }
 
   #profile img {
     float: left;
-    width: 50%;
-    height: 50%;
+    width: 40%;
+    height: 40%;
+    filter: grayscale(100%);
     padding-right: 20px;
     border-radius: 10px;
+  }
+
+  #profile hr {
+    border: 1px solid #cacaca;
   }
