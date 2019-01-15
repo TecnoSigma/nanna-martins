@@ -49,6 +49,9 @@
                   <li>
                     <a href="#">Trabalhos</a>
                   </li>
+                  <li>
+                    <a href="#">Blog</a>
+                  </li>
                 </ul>
               </div>
             </div>
@@ -115,6 +118,9 @@
           <br>
           <a href="#">
             <p>Trabalhos</p>
+          </a>
+          <a href="#">
+            <p>Blog</p>
           </a>
           <br>
           <hr>
