@@ -1,0 +1,62 @@
+﻿body {
+  font-family: 'Lato', sans-serif;
+}
+
+header {
+  background-color: #270027;
+  height: 100px;
+}
+
+header img {
+  margin: 25px 0px 0px 20px;
+}
+
+#social-medias {
+  margin: 30px 20px 0px 0px;
+  float: right;
+}
+
+#social-medias a img {
+  height: 30px;
+}
+
+#general-body {
+  background: url(../img/home.jpg) no-repeat center center;
+  padding: 0;
+  -webkit-background-size: cover;
+  background-size: cover;
+  -moz-background-size: cover;
+}
+
+#general-body div aside:first-child {
+  background-color: #fff;
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+}
+
+#general-body div aside:last-child {
+  background-color: #270027;
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+}
+
+#general-body div aside:last-child ul {
+  margin: 50px 30px 50px 0px;
+}
+
+#general-body div aside:last-child ul li {
+  margin-top: 20px;
+  text-align: right;
+}
+
+#general-body div aside:last-child ul li a {
+  margin-top: 20px;
+  opacity: 1;
+  filter: alpha(opacity=100);
+  text-decoration: none;
+  color: #fff;
+}
+
+#general-body div aside:last-child ul li a:hover {
+  font-weight: 800;
+}
