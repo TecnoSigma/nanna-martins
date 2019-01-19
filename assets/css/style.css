@@ -1,4 +1,6 @@
-﻿body {
+﻿/* TEMPLATE */
+/* ======== */
+body {
   font-family: 'Lato', sans-serif;
 }
 
@@ -59,7 +61,11 @@ footer {
 #menu ul li a:hover {
   font-weight: 800;
 }
+/* ======== */
 
+
+/* ARTICLES */
+/* ======== */
 #principal-article {
   margin: 5px;
 }
@@ -139,3 +145,70 @@ footer {
   text-decoration: none;
   color: #ff007f;
 }
+/* ======== */
+
+
+/* ARTICLE */
+/* ======= */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ff007f;
+  margin: 1em 0;
+  padding: 0;
+}
+
+#article {
+  background-color: #fff;
+  padding: 20px;
+}
+
+#article-social-medias {
+  margin: 0px 0px 20px 20px;
+}
+
+#article-social-medias a img {
+  padding-left: 10px;
+}
+
+#article-title h1 {
+  text-align: center;
+  font-family: 'Lato';
+}
+
+#article-body p {
+  text-align: justify;
+}
+
+#article-body div {
+  padding: 20px 0px 20px 0px;
+}
+
+#article-body img {
+  text-align: left;
+}
+
+#article-body span {
+  text-align: left;
+  font-style: italic;
+  font-size: small;
+}
+
+#article-author {
+  text-align: left;
+  font-style: italic;
+  font-size: small;
+}
+
+#article-created-at {
+  text-align: left;
+  font-style: italic;
+  font-size: small;
+}
+
+#article-pagination a {
+  padding-right: 40px;
+  color: #000;
+}
+/* ======= */
