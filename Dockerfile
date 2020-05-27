@@ -1,8 +1,10 @@
 FROM ruby:2.7.1
 RUN apt install curl
 RUN curl -sL https://deb.nodesource.com/setup_6.x | bash -
-RUN apt-get update -qq && apt-get install -y nodejs && apt-get install -y build-essential
-RUN apt-get install -y npm 
+RUN apt-get update -qq && apt-get install -y nodejs && apt-get install -y build-essential && apt-get install -y libpq-dev
+RUN apt-get install -y npm
+RUN apt-get update && apt-get install -y --no-install-recommends apt-utils
+RUN apt-get install graphviz -y
 RUN mkdir /nanna-martins
 WORKDIR /nanna-martins
 COPY Gemfile /nanna-martins/Gemfile

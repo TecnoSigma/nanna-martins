@@ -9,13 +9,15 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '>= 0.4.0', group: :doc
-gem 'rspec-rails', '~> 3.8'
-gem 'faker'
-gem 'factory_bot_rails'
-gem 'pry-rails'
+gem 'bootsnap', require: false
+gem 'i18n'
 
 group :development, :test do
   gem 'byebug'
+  gem 'rspec-rails', '~> 3.8'
+  gem 'faker'
+  gem 'factory_bot_rails'
+  gem 'pry-rails'
 end
 
 group :test do
@@ -26,5 +28,6 @@ end
 group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
+  gem 'rails-erd'
 end
 
