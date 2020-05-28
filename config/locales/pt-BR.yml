@@ -2,3 +2,6 @@ pt-BR:
   messages:
     errors:
       required_field: 'Preenchimento de campo obrigatório!'
+      invalid_format: 'Formato inválido!'
+  statuses:
+    activated: 'Ativo'
