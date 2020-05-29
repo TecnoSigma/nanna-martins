@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_29_040650) do
+ActiveRecord::Schema.define(version: 2020_05_29_044418) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -61,6 +61,12 @@ ActiveRecord::Schema.define(version: 2020_05_29_040650) do
 
   create_table "genders", force: :cascade do |t|
     t.string "kind"
+  end
+
+  create_table "offer_channels", force: :cascade do |t|
+    t.boolean "newsletter", default: true
+    t.boolean "sms", default: true
+    t.boolean "whatsapp", default: true
   end
 
   create_table "stocks", force: :cascade do |t|
