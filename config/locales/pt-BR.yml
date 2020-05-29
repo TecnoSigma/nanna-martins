@@ -4,5 +4,6 @@ pt-BR:
       required_field: 'Preenchimento de campo obrigatório!'
       invalid_format: 'Formato inválido!'
       already_field: 'Registro existente!'
+      incorrect_stock_value: 'Valor máximo não pode ser maior que o valor mínimo!'
   statuses:
     activated: 'Ativo'
