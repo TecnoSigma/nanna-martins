@@ -3,5 +3,6 @@ pt-BR:
     errors:
       required_field: 'Preenchimento de campo obrigatório!'
       invalid_format: 'Formato inválido!'
+      already_field: 'Registro existente!'
   statuses:
     activated: 'Ativo'

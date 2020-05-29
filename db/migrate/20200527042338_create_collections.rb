@@ -5,6 +5,9 @@ class CreateCollections < ActiveRecord::Migration[6.0]
       t.string :station
       t.integer :year
       t.string :status
+      t.datetime :deleted_at
+
+      t.timestamps
     end
   end
 end

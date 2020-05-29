@@ -10,16 +10,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_27_042338) do
+ActiveRecord::Schema.define(version: 2020_05_28_022017) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "accessories", force: :cascade do |t|
+    t.string "reference"
+    t.string "kind"
+    t.string "name"
+    t.text "feature"
+    t.boolean "new"
+    t.text "history"
+    t.text "description", default: [], array: true
+    t.string "status"
+    t.string "size"
+    t.text "complement", default: [], array: true
+    t.integer "amount"
+    t.datetime "deleted_at"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "collections", force: :cascade do |t|
     t.string "name"
     t.string "station"
     t.integer "year"
     t.string "status"
+    t.datetime "deleted_at"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "genders", force: :cascade do |t|
