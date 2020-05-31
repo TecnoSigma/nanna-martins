@@ -3,4 +3,6 @@ class OfferChannel < ApplicationRecord
             :sms,
             :whatsapp,
             presence: { message: Messages::ERRORS[:required_field] }
+
+  belongs_to :customer
 end

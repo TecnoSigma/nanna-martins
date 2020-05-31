@@ -13,4 +13,8 @@ validates :forename,
           :status,
           :password,
           presence: { message: Messages::ERRORS[:required_field] }
+
+  has_one :offer_channel
+  has_and_belongs_to_many :accessories
+  has_and_belongs_to_many :clothings
 end

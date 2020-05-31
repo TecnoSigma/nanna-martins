@@ -86,4 +86,36 @@ RSpec.describe Accessory, type: :model do
     expect(accessory).to be_invalid
     expect(accessory.errors.messages[:amount]).to include('Formato inválido!')
   end
+
+  describe 'validate relationships' do
+    it 'with Collection (N:1)' do
+      accessory = FactoryBot.build(:accessory)
+
+      expect(accessory).to respond_to(:collection)
+    end
+
+    it 'with Gender (N:1)' do
+      accessory = FactoryBot.build(:accessory)
+
+      expect(accessory).to respond_to(:gender)
+    end
+
+    it 'with Stock (N:1)' do
+      accessory = FactoryBot.build(:accessory)
+
+      expect(accessory).to respond_to(:stock)
+    end
+
+    it 'with Clothing (N:N)' do
+      accessory = FactoryBot.build(:accessory)
+
+      expect(accessory).to respond_to(:clothings)
+    end
+
+    it 'with Customer (N:N)' do
+      accessory = FactoryBot.build(:accessory)
+
+      expect(accessory).to respond_to(:customers)
+    end
+  end
 end

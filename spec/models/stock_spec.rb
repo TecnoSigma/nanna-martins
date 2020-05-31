@@ -35,4 +35,18 @@ RSpec.describe Stock, type: :model do
     expect(stock).to be_invalid
     expect(stock.errors.messages[:maximum]).to include('Valor máximo não pode ser maior que o valor mínimo!')
   end
+
+  describe 'validate relationships' do
+    it 'with and Accessory (1:1)' do
+      stock = FactoryBot.build(:stock)
+
+      expect(stock).to respond_to(:accessory)
+    end
+
+    it 'with and Clothing (1:1)' do
+      stock = FactoryBot.build(:stock)
+
+      expect(stock).to respond_to(:clothing)  
+    end
+  end
 end

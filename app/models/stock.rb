@@ -10,6 +10,9 @@ class Stock < ApplicationRecord
 
   validate :check_level
 
+  has_one :accessory
+  has_one :clothing
+
   def check_level
     return unless self.minimum.present?
     return unless self.maximum.present?

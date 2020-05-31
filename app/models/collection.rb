@@ -8,4 +8,7 @@ class Collection < ApplicationRecord
   validates :year,
             numericality: { only_integer: true,
                             message: Messages::ERRORS[:invalid_format] }
+
+  has_many :accessories
+  has_many :clothings
 end

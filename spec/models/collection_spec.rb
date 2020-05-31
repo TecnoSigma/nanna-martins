@@ -35,4 +35,18 @@ RSpec.describe Collection, type: :model do
     expect(collection).to be_invalid
     expect(collection.errors.messages[:year]).to include('Formato inválido!')
   end
+
+  describe 'validate relationships' do
+    it 'with Accessory (1:N)' do
+      collection = FactoryBot.build(:collection)
+
+      expect(collection).to respond_to(:accessories)
+    end
+
+    it 'with Clothing (1:N)' do
+      collection = FactoryBot.build(:collection)
+
+      expect(collection).to respond_to(:clothings)
+    end
+  end
 end

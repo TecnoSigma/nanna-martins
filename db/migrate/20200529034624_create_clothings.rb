@@ -13,6 +13,9 @@ class CreateClothings < ActiveRecord::Migration[6.0]
       t.text :complement, array: true, default: []
       t.integer :amount
       t.datetime :deleted_at
+      t.references :collection, index: true
+      t.references :gender,     index: true
+      t.references :stock,      index: true
 
       t.timestamps
     end

@@ -91,4 +91,24 @@ RSpec.describe Customer, type: :model do
     expect(customer).to be_invalid
     expect(customer.errors.messages[:password]).to include('Preenchimento de campo obrigatório!')
   end
+
+  describe 'validate relationships' do
+    it 'with and OfferChannel (1:1)' do
+      customer = FactoryBot.build(:customer)
+
+      expect(customer).to respond_to(:offer_channel)
+    end
+
+    it 'with and Accessory (N:N)' do                                                                                                                                                   
+      customer = FactoryBot.build(:customer)
+
+      expect(customer).to respond_to(:accessories)
+    end
+
+    it 'with and Clothing (N:N)' do
+      customer = FactoryBot.build(:customer)
+
+      expect(customer).to respond_to(:clothings)
+    end
+  end
 end
