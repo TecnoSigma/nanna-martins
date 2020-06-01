@@ -7,3 +7,9 @@ pt-BR:
       incorrect_stock_value: 'Valor máximo não pode ser maior que o valor mínimo!'
   statuses:
     activated: 'Ativo'
+  partials:
+    header:
+      female_fashion: 'Moda Feminina'
+      male_fashion: 'Moda Masculina'
+      about_us: 'Sobre Nós'
+      contact: 'Contato'
