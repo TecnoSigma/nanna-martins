@@ -1,4 +1,5 @@
 pt-BR:
+  site_title: 'Nanna Martins'
   messages:
     errors:
       required_field: 'Preenchimento de campo obrigatório!'
@@ -13,3 +14,7 @@ pt-BR:
       male_fashion: 'Moda Masculina'
       about_us: 'Sobre Nós'
       contact: 'Contato'
+      company_logo: 'Logotipo da Companhia'
+    footer:
+      powered: 'Desenvolvido por '
+      company: 'Tecnosigma'
