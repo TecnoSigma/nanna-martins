@@ -1,1 +1,14 @@
-
+<div class="container-fluid">
+  <div id="main">
+    <section id="clothings">
+      <h3><%= t('.titles.clothings') %></h3>
+      <% @clothings.each do |clothing| %>
+        <%= clothing.reference %>
+        <%= image_tag clothing.photos.first %>
+      <% end %>
+    </section>
+    <section id="accessories">
+      <h3><% t('.titles.accessories') %><h3>
+    </section>
+  </div>
+</div>

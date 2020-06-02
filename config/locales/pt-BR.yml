@@ -18,3 +18,8 @@ pt-BR:
     footer:
       powered: 'Desenvolvido por '
       company: 'Tecnosigma'
+  home:
+    index:
+      titles:
+        clothings: 'Vestuários'
+        accessories: 'Acessórios'

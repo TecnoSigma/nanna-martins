@@ -23,4 +23,5 @@ class Clothing < ApplicationRecord
   belongs_to :stock
   has_and_belongs_to_many :accessories
   has_and_belongs_to_many :customers
+  has_many_attached :photos
 end

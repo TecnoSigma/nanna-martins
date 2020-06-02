@@ -2,6 +2,7 @@ FactoryBot.define do
   factory :collection do
     name { Faker::Lorem.word }
     station { ['Primavera', 'Verão', 'Outuno', 'Inverno'].sample }
-    status { DateTime.now.year }
+    year { DateTime.now.year }
+    status { Status::STATUSES[:activated] }
   end
 end

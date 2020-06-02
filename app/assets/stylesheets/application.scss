@@ -1,3 +1,8 @@
+ /*
+ *= require_tree .
+ *= require_self
+ */
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
@@ -31,11 +36,26 @@ footer small a {
     color: #ccc;
   }
 
-#logotype a img {
-  display: block;
-  margin: auto;
-  width: 10%;
+h3 {
+  float: left;
+  width: 100%;
+  text-align: center;
+  font-variant: small-caps;
 }
+
+#main {
+  height: 100vw;
+  background-color: #fff;
+}
+
+#logotype {
+  padding-top: 20px;
+}
+  #logotype a img {
+    display: block;
+    margin: auto;
+    width: 10%;
+  }
 
 .menu {
   width: 100%;
