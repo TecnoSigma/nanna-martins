@@ -2,11 +2,17 @@
   <div id="main">
     <section id="clothings">
       <h3><%= t('.titles.clothings') %></h3>
-      <% @clothings.each do |clothing| %>
-        <%= clothing.reference %>
-        <%= image_tag clothing.photos.first %>
-      <% end %>
+      <div id="clothing_news_slideshow">
+        <div>
+          <%= image_tag @clothing_news.first.photos.first %>
+       </div>
+       <div>
+         <%= image_tag @clothing_news.last.photos.first %>
+       </div>
+    </div>
     </section>
+
+
     <section id="accessories">
       <h3><% t('.titles.accessories') %><h3>
     </section>

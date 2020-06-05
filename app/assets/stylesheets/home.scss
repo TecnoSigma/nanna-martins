@@ -1,0 +1,12 @@
+#clothing_news_slideshow {
+  top: 70px;
+  position: relative;
+}
+  #clothing_news_slideshow > div {
+    position: absolute;
+    width: 100%;
+  }
+    #clothing_news_slideshow > div img {
+      display: block;
+      margin: auto;
+    }

@@ -9,10 +9,10 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '>= 0.4.0', group: :doc
-gem 'bootsnap', require: false
 gem 'i18n'
 gem 'bootstrap-sass', '~> 3.4.1'
 gem 'sassc-rails', '>= 2.1.0'
+gem 'popper_js', '~> 1.14.5'
 
 group :development, :test do
   gem 'byebug'

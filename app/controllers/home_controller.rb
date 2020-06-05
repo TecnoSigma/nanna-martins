@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
   def index
-    @clothings = Clothing.all
+    @clothing_news = Clothing.where(new: true)
   end
 end
