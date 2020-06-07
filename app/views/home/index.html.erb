@@ -1,14 +1,31 @@
 <div class="container-fluid">
-  <div id="main">
-    <section id=news">
-      <h3><%= t('.titles.news') %></h3>
-      <div id="news_slideshow">
-        <% @news.each do |new| %>
-        <div>
-          <%= image_tag new.photos.first %>
-        </div>
-        <% end %>
-      </div>
-    </section>
-  </div>
+  <section id="news">
+    <h3><%= t('.titles.news') %></h3>
+    <% @news.each do |new| %>
+      <%= link_to root_path do %>
+        <%= image_tag new.photos.first, class: ' new slides slideshow' %>
+      <% end %>
+    <% end %>
+  </section>
 </div>
+<script>
+  var slideIndex = 0;
+  carousel();
+
+  function carousel() {
+    var i;
+    var slide = document.getElementsByClassName("slides");
+
+    for (i = 0; i < slide.length; i++) {
+      slide[i].style.display = "none";
+    }
+
+    slideIndex++;
+
+    if (slideIndex > slide.length) {slideIndex = 1}
+
+    slide[slideIndex-1].style.display = "block";
+
+    setTimeout(carousel, 8000);
+  }
+</script>

@@ -1,18 +1,20 @@
-#news {
-  display: block;
+.slideshow {
+  margin: 0 auto;
+  animation: fading 8s infinite
 }
 
-#news_slideshow {
-  top: 70px;
-  position: relative;
+.new {
+  width: 70%;
 }
-  #news_slideshow > div {
-    position: absolute;
-    width: 100%;
+
+@keyframes fading {
+  0% {
+    opacity: 0
   }
-    #news_slideshow > div img {
-      display: block;
-      margin: auto;
-      width: 100%;
-      height:100%;
-    }
+  50% {
+    opacity: 1
+  }
+  100% {
+    opacity: 0
+  }
+}
