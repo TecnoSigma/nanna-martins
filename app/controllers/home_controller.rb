@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
   def index
-    @clothing_news = Clothing.where(new: true)
+    @news = (Clothing.where(new: true) + Accessory.where(new: true)).shuffle
   end
 end

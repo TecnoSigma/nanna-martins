@@ -1,20 +1,14 @@
 <div class="container-fluid">
   <div id="main">
-    <section id="clothings">
-      <h3><%= t('.titles.clothings') %></h3>
-      <div id="clothing_news_slideshow">
+    <section id=news">
+      <h3><%= t('.titles.news') %></h3>
+      <div id="news_slideshow">
+        <% @news.each do |new| %>
         <div>
-          <%= image_tag @clothing_news.first.photos.first %>
-       </div>
-       <div>
-         <%= image_tag @clothing_news.last.photos.first %>
-       </div>
-    </div>
-    </section>
-
-
-    <section id="accessories">
-      <h3><% t('.titles.accessories') %><h3>
+          <%= image_tag new.photos.first %>
+        </div>
+        <% end %>
+      </div>
     </section>
   </div>
 </div>

@@ -23,4 +23,5 @@ class Accessory < ApplicationRecord
   belongs_to :stock
   has_and_belongs_to_many :clothings
   has_and_belongs_to_many :customers
+  has_many_attached :photos
 end
