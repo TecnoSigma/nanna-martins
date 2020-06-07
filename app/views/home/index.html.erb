@@ -3,7 +3,7 @@
     <h3><%= t('.titles.news') %></h3>
     <% @news.each do |new| %>
       <%= link_to root_path do %>
-        <%= image_tag new.photos.first, class: ' new slides slideshow' %>
+        <%= image_tag new.photos.first, class: 'new slides slideshow' %>
       <% end %>
     <% end %>
   </section>

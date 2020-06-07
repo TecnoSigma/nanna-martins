@@ -1,4 +1,8 @@
 class Clothing < ApplicationRecord
+  extend FriendlyId
+
+  friendly_id :name, use: :slugged
+
   validates :reference,
             :name,
             :history,

@@ -13,6 +13,7 @@ gem 'i18n'
 gem 'bootstrap-sass', '~> 3.4.1'
 gem 'sassc-rails', '>= 2.1.0'
 gem 'popper_js', '~> 1.14.5'
+gem 'friendly_id', '~> 5.2.4'
 
 group :development, :test do
   gem 'byebug'
