@@ -1,22 +1,19 @@
-FROM ruby:2.7.1
-RUN apt install curl
-RUN curl -sL https://deb.nodesource.com/setup_6.x | bash -
-RUN apt-get update -qq && apt-get install -y nodejs && apt-get install -y build-essential && apt-get install -y libpq-dev
-RUN apt-get install -y npm
-RUN apt-get update && apt-get install -y --no-install-recommends apt-utils
-RUN apt-get install graphviz -y
-RUN mkdir /nanna-martins
-WORKDIR /nanna-martins
-COPY Gemfile /nanna-martins/Gemfile
-COPY Gemfile.lock /nanna-martins/Gemfile.lock
-RUN bundle install
-COPY . /nanna-martins
+FROM ruby:3.0
+WORKDIR /var/www/nanna-martins
 
-# Add a script to be executed every time the container starts.
-COPY entrypoint.sh /usr/bin/
-RUN chmod +x /usr/bin/entrypoint.sh
-ENTRYPOINT ["entrypoint.sh"]
+RUN curl -sL https://deb.nodesource.com/setup_lts.x | bash -
+RUN apt-get install -y nodejs
+RUN apt-get install graphviz -y
+
+ADD Gemfile /var/www/nanna-martins/Gemfile
+ADD Gemfile.lock /var/www/nanna-martins/Gemfile.lock
+
+RUN bash -c 'bundle install $(( [[ -z "$https_proxy" ]] && echo -n "--jobs $(nproc)") || echo -n "")'
+RUN bash -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ buster-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
+RUN bash -c 'curl https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add -'
+RUN apt-get update --allow-insecure-repositories
+RUN apt-get install -y --no-install-recommends postgresql-client-12
+
 EXPOSE 3000
 
-# Start the main process.
-CMD ["rails", "server", "-b", "0.0.0.0"]
+CMD bin/rails s -b 0.0.0.0 -p 3000
