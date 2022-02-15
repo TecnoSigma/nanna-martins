@@ -1,0 +1,76 @@
+@startuml
+  !include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+  !define SPRITESURL1 https://raw.githubusercontent.com/plantuml-stdlib/gilbarbara-plantuml-sprites/v1.0/sprites
+  !define SPRITESURL2 https://raw.githubusercontent.com/rabelenda/cicon-plantuml-sprites/v1.0/sprites
+
+  !includeurl SPRITESURL1/aws-s3.puml
+  !includeurl SPRITESURL1/postgresql.puml
+  !includeurl SPRITESURL1/ruby.puml
+  !includeurl SPRITESURL1/rails.puml
+  !includeurl SPRITESURL2/server.puml
+  !includeurl SPRITESURL2/user.puml
+
+  scale 2.0
+
+  LAYOUT_WITH_LEGEND()
+
+  Person(admin, "Administrador", "persona", $sprite="user")
+  Person(driver, "Motorista", "persona", $sprite="user")
+  Person(passenger, "Passageiro", "persona", $sprite="user")
+  Person(seller, "Vendedor", "persona", $sprite="user")
+  Person(subscriber, "Assinante", "persona", $sprite="user")
+
+  Container_Boundary(site, "Site") {
+  System(home_page, "Home Page", $sprite="rails")
+    System(checkout, "Checkout", $sprite="rails")
+
+    Rel(home_page, checkout, " ")
+  }
+
+  Container_Boundary(dashboards, "Dashboards") {
+    System(seller_panel, "Seller-Panel", $sprite="rails")
+    System(admin_panel, "Admin-Panel", $sprite="rails")
+    System(driver_panel, "Driver-Panel", $sprite="rails")
+    System(subscriber_panel, "Subscriber-Panel", $sprite="rails")
+  }
+
+  Container_Boundary(operations, "Operations") {
+    System(support, "Support", $sprite="ruby")
+    System(transmission, "Transmission", $sprite="ruby")
+    System(repository, "Repository", $sprite="ruby")
+    System(notifications, "Notifications", $sprite="ruby")
+    System(financial, "Financial", $sprite="ruby")
+  }
+
+  System_Ext(wirecard, "Wirecard", "Gateway de Pagamentos", $sprite="server")
+  System_Ext(enotas, "E-Notas", "Emissão de Notas Fiscais", $sprite="server")
+
+  ContainerDb(db, "Banco de Dados", "PostgreSQL", $sprite="postgresql")
+  ContainerDb_Ext(aws, "Banco de Imagens", "AWS", $sprite="aws-s3")
+
+  'Onboarding Relationships'
+  Rel(subscriber, site, "contratação")
+  Rel(site, repository, " ")
+  Rel(checkout, notifications, " ")
+
+  'Dashboard Relationships'
+  Rel(admin, admin_panel, "LDAP")
+  Rel(driver, driver_panel, "LDAP")
+  Rel(seller, seller_panel, "LDAP")
+  Rel(subscriber, subscriber_panel, "LDAP")
+  Rel(dashboards, repository, " ")
+  Rel(dashboards, notifications, " ")
+  Rel(admin_panel, financial, " ")
+  Rel(seller_panel, financial, " ")
+  Rel(subscriber_panel, financial, " ")
+  Rel(passenger, notifications, " ")
+
+  'Operations Relationships'
+  Rel(subscriber_panel, support, " ")
+  Rel(seller_panel, support, " ")
+  Rel(passenger, transmission, " ")
+  Rel(financial, wirecard, " ")
+  Rel(financial, enotas, " ")
+  Rel(repository, db, " ")
+  Rel(repository, aws, " ")
+@enduml
