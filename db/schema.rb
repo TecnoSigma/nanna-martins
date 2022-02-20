@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_20_174325) do
+ActiveRecord::Schema.define(version: 2022_02_20_213207) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,6 +46,23 @@ ActiveRecord::Schema.define(version: 2022_02_20_174325) do
     t.string "status", default: "ativo"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "feedstocks", force: :cascade do |t|
+    t.string "name"
+    t.string "measurement_unit"
+    t.integer "quantity"
+    t.string "description"
+    t.string "status", default: "ativo"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "feedstocks_providers", id: false, force: :cascade do |t|
+    t.bigint "feedstock_id", null: false
+    t.bigint "provider_id", null: false
+    t.index ["feedstock_id"], name: "index_feedstocks_providers_on_feedstock_id"
+    t.index ["provider_id"], name: "index_feedstocks_providers_on_provider_id"
   end
 
   create_table "providers", force: :cascade do |t|

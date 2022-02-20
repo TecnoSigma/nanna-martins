@@ -82,4 +82,12 @@ RSpec.describe Provider, type: :model do
       expect(provider.errors.messages[:postal_code]).to include(error_message)
     end
   end
+
+  describe 'validates relationships' do
+    it 'validates relationship N:N between Providers and Feedstocks' do
+      provider = Provider.new
+
+      expect(provider).to respond_to(:feedstocks)
+    end
+  end
 end
