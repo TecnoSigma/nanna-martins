@@ -12,5 +12,5 @@ class Customer < ApplicationRecord
             :cellphone,
             :email,
             :status,
-            presence: { message: 'Preenchimento de campo obrigatório!' }
+            presence: { message: Messages.errors[:required_fields] }
 end

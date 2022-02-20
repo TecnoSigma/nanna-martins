@@ -1,0 +1,4 @@
+pt-BR:
+  messages:
+    errors:
+      required_field: 'Preenchimento de campo obrigatório!'
