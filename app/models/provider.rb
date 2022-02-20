@@ -1,16 +1,8 @@
-class Customer < ApplicationRecord
+class Provider < ApplicationRecord
   validates :name,
             :kind,
-            :contact,
             :document,
-            :address,
-            :number,
-            :district,
-            :city,
-            :state,
-            :postal_code,
-            :cellphone,
-            :email,
+            :telephone,
             :status,
             presence: { message: Messages.errors[:required_field] }
 
@@ -20,7 +12,7 @@ class Customer < ApplicationRecord
   validates :email,
             format: { with: Regex.email, message: Messages.errors[:invalid_format] }
 
-  validates :cellphone,
+  validates :telephone,
             format: { with: Regex.cellphone, message: Messages.errors[:invalid_format] }
 
   validates :postal_code,

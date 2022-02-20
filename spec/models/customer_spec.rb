@@ -108,4 +108,42 @@ RSpec.describe Customer, type: :model do
       expect(customer.errors.messages[:status]).to include(error_message)
     end
   end
+
+  describe 'validates REGEX' do
+    it 'no validates when pass CPF with invalid REGEX' do
+      error_message = 'Formato inválido!'
+      invalid_cpf = '123456'
+      customer = FactoryBot.build(:customer, document: invalid_cpf)
+
+      expect(customer).to be_invalid
+      expect(customer.errors.messages[:document]).to include(error_message)
+    end
+
+    it 'no validates when pass email with invalid REGEX' do
+      error_message = 'Formato inválido!'
+      invalid_email = '123456'
+      customer = FactoryBot.build(:customer, email: invalid_email)
+
+      expect(customer).to be_invalid
+      expect(customer.errors.messages[:email]).to include(error_message)
+    end
+
+    it 'no validates when pass cellphone with invalid REGEX' do
+      error_message     = 'Formato inválido!'
+      invalid_cellphone = '123456'
+      customer = FactoryBot.build(:customer, cellphone: invalid_cellphone)
+
+      expect(customer).to be_invalid
+      expect(customer.errors.messages[:cellphone]).to include(error_message)
+    end
+
+    it 'no validates when pass postal code with invalid REGEX' do
+      error_message = 'Formato inválido!'
+      invalid_postal_code = '123456'
+      customer = FactoryBot.build(:customer, postal_code: invalid_postal_code)
+
+      expect(customer).to be_invalid
+      expect(customer.errors.messages[:postal_code]).to include(error_message)
+    end
+  end
 end

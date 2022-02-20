@@ -5,7 +5,7 @@ class Craft < ApplicationRecord
             :season,
             :year,
             :exclusivity,
-            presence: { message: Messages.errors[:required_fields] }
+            presence: { message: Messages.errors[:required_field] }
 
   validate :check_allowed_quantity
 

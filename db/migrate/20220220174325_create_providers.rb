@@ -1,6 +1,6 @@
-class CreateCustomers < ActiveRecord::Migration[6.1]
+class CreateProviders < ActiveRecord::Migration[6.1]
   def change
-    create_table :customers do |t|
+    create_table :providers do |t|
       t.string :name
       t.string :kind
       t.string :document
@@ -15,7 +15,6 @@ class CreateCustomers < ActiveRecord::Migration[6.1]
       t.string :state
       t.string :postal_code
       t.string :telephone
-      t.string :cellphone
       t.string :status, default: 'ativo'
 
       t.timestamps

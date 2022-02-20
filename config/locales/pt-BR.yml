@@ -3,3 +3,4 @@ pt-BR:
     errors:
       required_field: 'Preenchimento de campo obrigatório!'
       invalid_quantity: 'Quantidade inválida!'
+      invalid_format: 'Formato inválido!'
