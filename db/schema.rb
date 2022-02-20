@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_20_213207) do
+ActiveRecord::Schema.define(version: 2022_02_20_214600) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,9 +22,18 @@ ActiveRecord::Schema.define(version: 2022_02_20_213207) do
     t.string "season"
     t.string "year"
     t.string "exclusivity"
+    t.float "worked_hours"
+    t.float "weight"
     t.string "reference"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "crafts_feedstocks", id: false, force: :cascade do |t|
+    t.bigint "craft_id", null: false
+    t.bigint "feedstock_id", null: false
+    t.index ["craft_id"], name: "index_crafts_feedstocks_on_craft_id"
+    t.index ["feedstock_id"], name: "index_crafts_feedstocks_on_feedstock_id"
   end
 
   create_table "customers", force: :cascade do |t|

@@ -7,6 +7,8 @@ class CreateCrafts < ActiveRecord::Migration[6.1]
       t.string :season
       t.string :year
       t.string :exclusivity
+      t.float :worked_hours
+      t.float :weight
       t.string :reference
 
       t.timestamps

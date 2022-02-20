@@ -6,4 +6,5 @@ class Feedstock < ApplicationRecord
             presence: { message: Messages.errors[:required_field] }
 
   has_and_belongs_to_many :providers
+  has_and_belongs_to_many :crafts
 end

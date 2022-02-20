@@ -43,5 +43,11 @@ RSpec.describe Feedstock, type: :model do
 
       expect(feedstock).to respond_to(:providers)
     end
+
+    it 'validates relationship N:N between Crafts and Feedstocks' do
+      craft = Craft.new
+
+      expect(craft).to respond_to(:feedstocks)
+    end
   end
 end

@@ -68,4 +68,12 @@ RSpec.describe Craft, type: :model do
 
     expect(result).to be_present
   end
+
+  describe 'validates relationships' do
+    it 'validates relationship N:N between Feedstocks and Crafts' do
+      feedstock = Feedstock.new
+
+      expect(feedstock).to respond_to(:crafts)
+    end
+  end
 end
