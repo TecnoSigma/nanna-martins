@@ -5,13 +5,22 @@ require 'rails_helper'
 RSpec.describe Reference do
   describe '#generate' do
     it "generates accessories reference with incremented value when already exist reference" do
-      craft = FactoryBot.create(:craft, code: 'A-PUL2022PRU0456')
-
+      exclusivity = true
+      segment = 'Acessórios'
       kind = 'pulseira'
       season = 'Primavera'
       year = 2022
 
-      craft_params = { segment: 'Acessórios',
+      craft = FactoryBot.create(
+        :craft,
+        segment: segment,
+        kind: kind,
+        season: season,
+        year: year,
+        exclusivity: exclusivity
+      )
+
+      craft_params = { segment: segment,
                        kind: kind,
                        season: season,
                        year: year,
@@ -19,7 +28,7 @@ RSpec.describe Reference do
 
       result = described_class.new(craft_params).generate
 
-      expected_result = 'A-PUL2022PRU0457'
+      expected_result = 'A-PUL2022PRU0002'
 
       expect(result).to eq(expected_result)
     end

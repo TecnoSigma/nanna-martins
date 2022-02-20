@@ -27,11 +27,11 @@ class Reference
   end
 
   def numeration
-    crafts = Craft.where("code LIKE ?", "%" + prefix + "%")
+    crafts = Craft.where("reference LIKE ?", "%" + prefix + "%")
 
     return '0001' if crafts.empty?
 
-    code = crafts.last.code
+    code = crafts.last.reference
 
     code[-4..code.length]
       .to_i

@@ -101,7 +101,6 @@ GEM
     concurrent-ruby (1.1.9)
     connection_pool (2.2.5)
     crass (1.0.6)
-    date (3.2.2)
     debug_inspector (1.1.0)
     descendants_tracker (0.0.4)
       thread_safe (~> 0.3, >= 0.3.1)
@@ -156,11 +155,6 @@ GEM
     nio4r (2.5.8)
     nokogiri (1.13.1-x86_64-linux)
       racc (~> 1.4)
-    open-uri (0.2.0)
-      stringio
-      time
-      uri
-    openssl (3.0.0)
     parallel (1.21.0)
     parser (3.1.0.0)
       ast (~> 2.4.1)
@@ -200,6 +194,8 @@ GEM
       ruby-graphviz (~> 1.2)
     rails-html-sanitizer (1.4.2)
       loofah (~> 2.3)
+    rails-observers (0.1.5)
+      activemodel (>= 4.0)
     railties (6.1.4.6)
       actionpack (= 6.1.4.6)
       activesupport (= 6.1.4.6)
@@ -314,12 +310,9 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
-    stringio (3.0.1)
     thor (1.2.1)
     thread_safe (0.3.6)
     tilt (2.0.10)
-    time (0.2.0)
-      date
     tty-which (0.4.2)
     turbolinks (5.2.1)
       turbolinks-source (~> 5.2)
@@ -329,7 +322,6 @@ GEM
     uglifier (4.2.0)
       execjs (>= 0.3.0, < 3)
     unicode-display_width (2.1.0)
-    uri (0.11.0)
     virtus (1.0.5)
       axiom-types (~> 0.1)
       coercible (~> 1.0)
@@ -370,14 +362,12 @@ DEPENDENCIES
   i18n
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
-  nokogiri
-  open-uri
-  openssl
   pg (>= 0.18, < 2.0)
   pry
   puma (~> 3.11)
   rails (~> 6.1)
   rails-erd
+  rails-observers
   rspec-rails
   rspec_junit_formatter
   rubocop

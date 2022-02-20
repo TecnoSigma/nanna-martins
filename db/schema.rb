@@ -16,7 +16,13 @@ ActiveRecord::Schema.define(version: 2022_02_20_031959) do
   enable_extension "plpgsql"
 
   create_table "crafts", force: :cascade do |t|
-    t.string "code"
+    t.string "segment"
+    t.string "kind"
+    t.integer "quantity"
+    t.string "season"
+    t.string "year"
+    t.string "exclusivity"
+    t.string "reference"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
