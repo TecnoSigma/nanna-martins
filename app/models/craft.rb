@@ -9,6 +9,7 @@ class Craft < ApplicationRecord
 
   validate :check_allowed_quantity
 
+  has_many :costs
   has_and_belongs_to_many :feedstocks
 
   def check_allowed_quantity
