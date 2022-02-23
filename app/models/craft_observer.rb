@@ -2,8 +2,8 @@
 
 class CraftObserver < ActiveRecord::Observer
   def before_save(craft)
-    craft_params = { segment: craft.segment,
-                     kind: craft.kind,
+    craft_params = { description: craft.description,
+                     kind: craft.type,
                      season: craft.season,
                      year: craft.year,
                      exclusivity: ActiveModel::Type::Boolean.new.cast(craft.exclusivity) }

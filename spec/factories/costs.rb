@@ -7,14 +7,14 @@ FactoryBot.define do
   end
 
   trait :fixed do
-    type { 'fixed' }
+    type { 'Fixed' }
   end
 
   trait :material do
-    type { 'material' }
+    type { 'Material' }
   end
 
   trait :variable do
-    type { 'variable' }
+    type { 'Variable' }
   end
 end

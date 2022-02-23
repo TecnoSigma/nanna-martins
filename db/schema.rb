@@ -28,8 +28,8 @@ ActiveRecord::Schema.define(version: 2022_02_23_043800) do
   end
 
   create_table "crafts", force: :cascade do |t|
-    t.string "segment"
-    t.string "kind"
+    t.string "type"
+    t.string "description"
     t.integer "quantity"
     t.string "season"
     t.string "year"

@@ -1,15 +1,15 @@
 # frozen_string_literal: true
 
 class Reference
-  SEGMENTS = { a: 'Acessórios', v: 'Vestuário', d: 'Decoração' }.freeze
+  SEGMENTS = { accessory: 'A', clothing: 'V', decoration: 'D' }.freeze
   EXCLUSIVITY = { exclusive: 'U', nonexclusive: 'G' }.freeze
 
-  attr_reader :segment, :kind, :season, :year, :exclusivity
+  attr_reader :description, :kind, :season, :year, :exclusivity
 
   private_constant :EXCLUSIVITY, :SEGMENTS
 
   def initialize(craft_params)
-    @segment = craft_params[:segment]
+    @description = craft_params[:description]
     @kind = craft_params[:kind]
     @year = craft_params[:year]
     @season = craft_params[:season]
@@ -23,7 +23,7 @@ class Reference
   private
 
   def prefix
-    @prefix ||= "#{add_segment}-#{add_kind}#{year}#{add_season}#{add_exclusivity}"
+    @prefix ||= "#{add_kind}-#{add_description}#{year}#{add_season}#{add_exclusivity}"
   end
 
   def numeration
@@ -40,16 +40,16 @@ class Reference
       .rjust(4, '0')
   end
 
-  def add_kind
-    kind[0..2].upcase
+  def add_description
+    description[0..2].upcase
   end
 
   def add_season
     season[0..1].upcase
   end
 
-  def add_segment
-    SEGMENTS.key(segment).to_s.upcase
+  def add_kind
+    SEGMENTS[kind.downcase.to_sym]
   end
 
   def add_exclusivity

@@ -1,6 +1,5 @@
 class Craft < ApplicationRecord
-  validates :segment,
-            :kind,
+  validates :description,
             :quantity,
             :season,
             :year,

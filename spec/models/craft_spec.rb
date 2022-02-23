@@ -2,12 +2,12 @@ require 'rails_helper'
 
 RSpec.describe Craft, type: :model do
   describe 'validate required fields' do
-    it 'no validates when not pass segment' do
+    it 'no validates when not pass description' do
       error_message = 'Preenchimento de campo obrigatório!'
-      craft = FactoryBot.build(:craft, segment: nil)
+      craft = FactoryBot.build(:craft, description: nil)
 
       expect(craft).to be_invalid
-      expect(craft.errors.messages[:segment]).to include(error_message)
+      expect(craft.errors.messages[:description]).to include(error_message)
     end
 
     it 'no validates when not pass quantity' do
@@ -24,14 +24,6 @@ RSpec.describe Craft, type: :model do
 
       expect(craft).to be_invalid
       expect(craft.errors.messages[:quantity]).to include(error_message)
-    end
-
-    it 'no validates when not pass kind' do
-      error_message = 'Preenchimento de campo obrigatório!'
-      craft = FactoryBot.build(:craft, kind: nil)
-
-      expect(craft).to be_invalid
-      expect(craft.errors.messages[:kind]).to include(error_message)
     end
 
     it 'no validates when not pass season' do

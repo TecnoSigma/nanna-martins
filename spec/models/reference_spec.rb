@@ -6,21 +6,21 @@ RSpec.describe Reference do
   describe '#generate' do
     it "generates accessories reference with incremented value when already exist reference" do
       exclusivity = true
-      segment = 'Acessórios'
-      kind = 'pulseira'
+      description = 'pulseira'
+      kind = 'accessory'
       season = 'Primavera'
       year = 2022
 
       craft = FactoryBot.create(
         :craft,
-        segment: segment,
-        kind: kind,
+        :accessory,
+        description: description,
         season: season,
         year: year,
         exclusivity: exclusivity
       )
 
-      craft_params = { segment: segment,
+      craft_params = { description: description,
                        kind: kind,
                        season: season,
                        year: year,
@@ -35,11 +35,12 @@ RSpec.describe Reference do
 
     context 'when the craft is exclusive' do
       it "generates accessories reference created in Spring/2022 when pass craft informations" do
-        kind = 'pulseira'
+        description = 'pulseira'
+        kind = 'accessory'
         season = 'Primavera'
         year = 2022
 
-        craft_params = { segment: 'Acessórios',
+        craft_params = { description: description,
                          kind: kind,
                          season: season,
                          year: year,
@@ -53,11 +54,12 @@ RSpec.describe Reference do
       end
 
       it "generates clothing reference created in Summer/1999 when pass craft informations" do
-        kind = 'vestido'
+        description = 'Vestido'
+        kind = 'clothing'
         season = 'Verão'
         year = 1999
 
-        craft_params = { segment: 'Vestuário',
+        craft_params = { description: description,
                          kind: kind,
                          season: season,
                          year: year,
@@ -71,11 +73,12 @@ RSpec.describe Reference do
       end
 
       it "generates decoration reference created in Autumn/2022 when pass craft informations" do
-        kind = 'cortina'
+        description = 'cortina'
+        kind = 'decoration'
         season = 'Outono'
         year = 2022
 
-        craft_params = { segment: 'Decoração',
+        craft_params = { description: description,
                          kind: kind,
                          season: season,
                          year: year,
@@ -91,11 +94,12 @@ RSpec.describe Reference do
 
     context 'when the craft isn\'t exclusive' do
       it "generates accessories reference created in Spring/2022 when pass craft informations" do
-        kind = 'pulseira'
+        description = 'pulseira'
+        kind = 'accessory'
         season = 'Primavera'
         year = 2022
 
-        craft_params = { segment: 'Acessórios',
+        craft_params = { description: description,
                          kind: kind,
                          season: season,
                          year: year,
@@ -109,11 +113,12 @@ RSpec.describe Reference do
       end
 
       it "generates clothing reference created in Summer/1999 when pass craft informations" do
-        kind = 'vestido'
+        description = 'vestido'
+        kind = 'clothing'
         season = 'Verão'
         year = 1999
 
-        craft_params = { segment: 'Vestuário',
+        craft_params = { description: description,
                          kind: kind,
                          season: season,
                          year: year,
@@ -127,11 +132,12 @@ RSpec.describe Reference do
       end
 
       it "generates decoration reference created in Autumn/2022 when pass craft informations" do
-        kind = 'cortina'
+        description = 'cortina'
+        kind = 'decoration'
         season = 'Outono'
         year = 2022
 
-        craft_params = { segment: 'Decoração',
+        craft_params = { description: description,
                          kind: kind,
                          season: season,
                          year: year,
