@@ -16,7 +16,7 @@ class CreateCustomers < ActiveRecord::Migration[6.1]
       t.string :postal_code
       t.string :telephone
       t.string :cellphone
-      t.string :status, default: 'ativo'
+      t.integer :status, default: 1
 
       t.timestamps
     end

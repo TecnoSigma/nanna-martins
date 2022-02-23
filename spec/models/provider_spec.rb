@@ -35,14 +35,6 @@ RSpec.describe Provider, type: :model do
       expect(provider).to be_invalid
       expect(provider.errors.messages[:telephone]).to include(error_message)
     end
-
-    it 'no validates when not pass status' do
-      error_message = 'Preenchimento de campo obrigatório!'
-      provider = FactoryBot.build(:provider, status: nil)
-
-      expect(provider).to be_invalid
-      expect(provider.errors.messages[:status]).to include(error_message)
-    end
   end
 
   describe 'validates REGEX' do

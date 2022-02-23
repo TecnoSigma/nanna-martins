@@ -5,6 +5,8 @@ class Feedstock < ApplicationRecord
             :description,
             presence: { message: Messages.errors[:required_field] }
 
+  enum status: Status::FEEDSTOCKS
+
   has_and_belongs_to_many :providers
   has_and_belongs_to_many :crafts
 end

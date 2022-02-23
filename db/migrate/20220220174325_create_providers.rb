@@ -15,7 +15,7 @@ class CreateProviders < ActiveRecord::Migration[6.1]
       t.string :state
       t.string :postal_code
       t.string :telephone
-      t.string :status, default: 'ativo'
+      t.integer :status, default: 1
 
       t.timestamps
     end

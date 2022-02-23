@@ -6,7 +6,7 @@ class CreateFeedstocks < ActiveRecord::Migration[6.1]
       t.string :measurement_unit
       t.integer :quantity
       t.string :description
-      t.string :status, default: 'ativo'
+      t.integer :status, default: 1
 
       t.timestamps
     end

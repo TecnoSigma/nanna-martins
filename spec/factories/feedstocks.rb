@@ -5,5 +5,6 @@ FactoryBot.define do
     quantity { Faker::Number.number(digits: 2) }
     price { Faker::Number.decimal(l_digits: 2) }
     description { Faker::Lorem.sentence }
+    status { :activated }
   end
 end

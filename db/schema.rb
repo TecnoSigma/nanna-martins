@@ -52,7 +52,7 @@ ActiveRecord::Schema.define(version: 2022_02_20_214600) do
     t.string "postal_code"
     t.string "telephone"
     t.string "cellphone"
-    t.string "status", default: "ativo"
+    t.integer "status", default: 1
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -63,7 +63,7 @@ ActiveRecord::Schema.define(version: 2022_02_20_214600) do
     t.string "measurement_unit"
     t.integer "quantity"
     t.string "description"
-    t.string "status", default: "ativo"
+    t.integer "status", default: 1
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -90,7 +90,7 @@ ActiveRecord::Schema.define(version: 2022_02_20_214600) do
     t.string "state"
     t.string "postal_code"
     t.string "telephone"
-    t.string "status", default: "ativo"
+    t.integer "status", default: 1
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
