@@ -1,0 +1,29 @@
+# frozen_string_literal: true
+
+require 'rails_helper'
+
+RSpec.describe Statuses do
+  it 'returns customer statuses' do
+    result = described_class::CUSTOMERS
+
+    expected_result = { pendent: 0, activated: 1, deactivated: 2 }
+
+    expect(result).to eq(expected_result)
+  end
+
+  it 'returns feedstock statuses' do
+    result = described_class::FEEDSTOCKS
+
+    expected_result = { pendent: 0, activated: 1, deactivated: 2 }
+
+    expect(result).to eq(expected_result)
+  end
+
+  it 'returns provider statuses' do
+    result = described_class::PROVIDERS
+
+    expected_result = { pendent: 0, activated: 1, deactivated: 2 }
+
+    expect(result).to eq(expected_result)
+  end
+end

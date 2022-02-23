@@ -17,7 +17,7 @@ class Provider < ApplicationRecord
   validates :postal_code,
             format: { with: Regex.postal_code, message: Messages.errors[:invalid_format] }
 
-  enum status: Status::CUSTOMERS
+  enum status: Statuses::CUSTOMERS
 
   has_and_belongs_to_many :feedstocks
 end
