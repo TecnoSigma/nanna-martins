@@ -11,6 +11,8 @@ class CreateCrafts < ActiveRecord::Migration[6.1]
       t.float :weight
       t.string :reference
 
+      # add photos
+
       t.timestamps
     end
   end

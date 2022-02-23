@@ -59,6 +59,7 @@ ActiveRecord::Schema.define(version: 2022_02_20_214600) do
 
   create_table "feedstocks", force: :cascade do |t|
     t.string "name"
+    t.float "price"
     t.string "measurement_unit"
     t.integer "quantity"
     t.string "description"
