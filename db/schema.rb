@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_24_034409) do
+ActiveRecord::Schema.define(version: 2022_02_24_041539) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,6 +48,13 @@ ActiveRecord::Schema.define(version: 2022_02_24_034409) do
     t.bigint "feedstock_id", null: false
     t.index ["craft_id"], name: "index_crafts_feedstocks_on_craft_id"
     t.index ["feedstock_id"], name: "index_crafts_feedstocks_on_feedstock_id"
+  end
+
+  create_table "crafts_inspirations", id: false, force: :cascade do |t|
+    t.bigint "craft_id", null: false
+    t.bigint "inspiration_id", null: false
+    t.index ["craft_id"], name: "index_crafts_inspirations_on_craft_id"
+    t.index ["inspiration_id"], name: "index_crafts_inspirations_on_inspiration_id"
   end
 
   create_table "customers", force: :cascade do |t|
