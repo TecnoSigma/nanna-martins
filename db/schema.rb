@@ -21,6 +21,8 @@ ActiveRecord::Schema.define(version: 2022_02_24_041539) do
     t.string "description"
     t.string "periodicity"
     t.float "price"
+    t.string "name"
+    t.string "measurement_unit"
     t.bigint "craft_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -41,13 +43,6 @@ ActiveRecord::Schema.define(version: 2022_02_24_041539) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["order_id"], name: "index_crafts_on_order_id"
-  end
-
-  create_table "crafts_feedstocks", id: false, force: :cascade do |t|
-    t.bigint "craft_id", null: false
-    t.bigint "feedstock_id", null: false
-    t.index ["craft_id"], name: "index_crafts_feedstocks_on_craft_id"
-    t.index ["feedstock_id"], name: "index_crafts_feedstocks_on_feedstock_id"
   end
 
   create_table "crafts_inspirations", id: false, force: :cascade do |t|

@@ -9,7 +9,6 @@ class Craft < ApplicationRecord
   validate :check_allowed_quantity
 
   has_many :costs
-  has_and_belongs_to_many :feedstocks
   has_and_belongs_to_many :inspirations
   belongs_to :order, optional: true
 

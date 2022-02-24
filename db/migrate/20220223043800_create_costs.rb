@@ -6,6 +6,11 @@ class CreateCosts < ActiveRecord::Migration[6.1]
       t.string :description
       t.string :periodicity
       t.float :price
+
+      # Feedstock
+      t.string :name
+      t.string :measurement_unit
+
       t.references :craft, index: true
 
       t.timestamps

@@ -62,12 +62,6 @@ RSpec.describe Craft, type: :model do
   end
 
   describe 'validates relationships' do
-    it 'validates relationship N:N between Feedstocks and Crafts' do
-      craft = Craft.new
-
-      expect(craft).to respond_to(:feedstocks)
-    end
-
     it 'validates relationship N:N between Inspirations and Crafts' do
       craft = Craft.new
 

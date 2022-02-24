@@ -10,16 +10,4 @@ FactoryBot.define do
     worked_hours { Faker::Number.decimal(l_digits: 2) }
     weight { Faker::Number.decimal(l_digits: 2) }
   end
-
-  trait :accessory do
-    type { 'Accessory' }
-  end
-
-  trait :clothing do
-    type { 'Clothing' }
-  end
-
-  trait :decoration do
-    type { 'Decoration' }
-  end
 end

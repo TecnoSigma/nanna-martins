@@ -7,13 +7,13 @@ RSpec.describe Reference do
     it "generates accessories reference with incremented value when already exist reference" do
       exclusivity = true
       description = 'pulseira'
-      kind = 'accessory'
+      kind = 'Accessory'
       season = 'Primavera'
       year = 2022
 
       craft = FactoryBot.create(
         :craft,
-        :accessory,
+        type: kind,
         description: description,
         season: season,
         year: year,

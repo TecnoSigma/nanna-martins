@@ -19,22 +19,6 @@ RSpec.describe Feedstock, type: :model do
       expect(feedstock).to be_invalid
       expect(feedstock.errors.messages[:name]).to include(error_message)
     end
-
-    it 'no validates when not pass quantity' do
-      error_message = 'Preenchimento de campo obrigatório!'
-     feedstock = FactoryBot.build(:feedstock, quantity: nil)
-
-      expect(feedstock).to be_invalid
-      expect(feedstock.errors.messages[:quantity]).to include(error_message)
-    end
-
-    it 'no validates when not pass description' do
-      error_message = 'Preenchimento de campo obrigatório!'
-      feedstock = FactoryBot.build(:feedstock, description: nil)
-
-      expect(feedstock).to be_invalid
-      expect(feedstock.errors.messages[:description]).to include(error_message)
-    end
   end
 
   describe 'validates relationships' do
@@ -42,12 +26,6 @@ RSpec.describe Feedstock, type: :model do
       feedstock = Feedstock.new
 
       expect(feedstock).to respond_to(:providers)
-    end
-
-    it 'validates relationship N:N between Crafts and Feedstocks' do
-      craft = Craft.new
-
-      expect(craft).to respond_to(:feedstocks)
     end
   end
 end
