@@ -73,5 +73,11 @@ RSpec.describe Craft, type: :model do
 
       expect(craft).to respond_to(:costs)
     end
+
+    it 'validates relationship N:1 between Crafts and Order' do
+      craft = Craft.new
+
+      expect(craft).to respond_to(:order)
+    end
   end
 end

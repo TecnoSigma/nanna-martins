@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_23_043800) do
+ActiveRecord::Schema.define(version: 2022_02_24_000446) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,8 +37,10 @@ ActiveRecord::Schema.define(version: 2022_02_23_043800) do
     t.float "worked_hours"
     t.float "weight"
     t.string "reference"
+    t.bigint "order_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["order_id"], name: "index_crafts_on_order_id"
   end
 
   create_table "crafts_feedstocks", id: false, force: :cascade do |t|
@@ -85,6 +87,20 @@ ActiveRecord::Schema.define(version: 2022_02_23_043800) do
     t.bigint "provider_id", null: false
     t.index ["feedstock_id"], name: "index_feedstocks_providers_on_feedstock_id"
     t.index ["provider_id"], name: "index_feedstocks_providers_on_provider_id"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.datetime "delivery_forecast"
+    t.float "freight"
+    t.float "final_payment"
+    t.float "down_payment"
+    t.integer "quantity"
+    t.string "observation"
+    t.integer "status", default: 0
+    t.bigint "customer_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["customer_id"], name: "index_orders_on_customer_id"
   end
 
   create_table "providers", force: :cascade do |t|

@@ -10,6 +10,7 @@ class Craft < ApplicationRecord
 
   has_many :costs
   has_and_belongs_to_many :feedstocks
+  belongs_to :order, optional: true
 
   def check_allowed_quantity
     return unless self.quantity

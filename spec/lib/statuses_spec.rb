@@ -26,4 +26,12 @@ RSpec.describe Statuses do
 
     expect(result).to eq(expected_result)
   end
+
+  it 'returns provider statuses' do
+    result = described_class::ORDERS
+
+    expected_result = { pendent: 0, activated: 1, deactivated: 2, delivered: 3, cancelled: 4 }
+
+    expect(result).to eq(expected_result)
+  end
 end

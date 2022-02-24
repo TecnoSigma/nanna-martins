@@ -27,4 +27,6 @@ class Customer < ApplicationRecord
             format: { with: Regex.postal_code, message: Messages.errors[:invalid_format] }
 
   enum status: Statuses::CUSTOMERS
+
+  has_many :orders
 end

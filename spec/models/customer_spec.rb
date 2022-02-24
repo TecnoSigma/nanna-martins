@@ -146,4 +146,12 @@ RSpec.describe Customer, type: :model do
       expect(customer.errors.messages[:postal_code]).to include(error_message)
     end
   end
+
+  describe 'validates relationships' do
+    it 'validates relatioships 1:N between Customer and Orders' do
+      customer = Customer.new
+
+      expect(customer).to respond_to(:orders)
+    end
+  end
 end
