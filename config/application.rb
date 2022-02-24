@@ -7,6 +7,15 @@ require 'rails/all'
 Bundler.require(*Rails.groups)
 
 module NannaMartins
+  class Settings < Settingslogic
+    source 'config/nanna-martins.yml'
+    namespace Rails.env
+  end
+
+  def self.config
+    Settings
+  end
+
   class Application < Rails::Application
     config.load_defaults 5.2
 

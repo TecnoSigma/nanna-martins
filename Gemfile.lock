@@ -293,6 +293,7 @@ GEM
       childprocess (>= 0.5, < 5.0)
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2)
+    settingslogic (2.0.9)
     sexp_processor (4.16.0)
     should_not (1.1.0)
     sidekiq (6.4.1)
@@ -390,6 +391,7 @@ DEPENDENCIES
   rubycritic
   sass-rails (~> 5.0)
   selenium-webdriver
+  settingslogic
   should_not
   sidekiq
   simplecov-cobertura

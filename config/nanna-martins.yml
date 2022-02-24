@@ -1,0 +1,14 @@
+defaults: &defaults
+ app_url: 'localhost'
+ app_port: 3000
+
+development:
+  <<: *defaults
+
+test: &test
+  <<: *defaults
+
+production:
+  <<: *defaults
+  app_url: 'https://nannamartins.com.br'
+  app_port: 443
