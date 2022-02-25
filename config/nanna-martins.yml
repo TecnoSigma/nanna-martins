@@ -10,5 +10,5 @@ test: &test
 
 production:
   <<: *defaults
-  app_url: 'https://nannamartins.com.br'
+  app_url: 'nannamartins.com.br'
   app_port: 443
