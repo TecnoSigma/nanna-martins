@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
-  devise_for :users
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  devise_for :users,
+    path: '',
+    path_names: {
+      sign_in: "administrador/login",
+      sign_out: "administrador/logout",
+    }
+
+  root to: 'home#index'
+
+  scope module: 'admin_panel', path: 'administrador', as: 'admin_panel' do
+    get '/', to: 'dashboard#index'
+  end
 end
