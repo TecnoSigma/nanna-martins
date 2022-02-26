@@ -3,7 +3,7 @@ Rails.application.routes.draw do
     path: '',
     path_names: {
       sign_in: "administrador/login",
-      sign_out: "administrador/logout",
+      sign_out: "logout",
     }
 
   root to: 'home#index'
