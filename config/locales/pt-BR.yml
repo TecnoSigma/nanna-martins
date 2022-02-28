@@ -1,4 +1,27 @@
 pt-BR:
+  layouts:
+    application:
+      company: 'Atelier Nanna Martins'
+      copyright: '© %{current_year} - Powered by'
+      tecnosigma:
+        name: 'TecnoSigma'
+        url: 'http://tecnosigma.com.br'
+      menu:
+        customers: 'Clientes'
+        providers: 'Fornecedores'
+        feedstocks: 'Matérias-Primas'
+        orders: 'Pedidos'
+        crafts: 'Artes'
+        inspirations: 'Inspirações'
+        configurations: 'Configurações'
+        logout: 'Logout'
+  devise:
+    sessions:
+      new:
+        title: 'Dados de Acesso'
+        email: 'Email'
+        password: 'Senha'
+        access_btn: 'Acessar'
   messages:
     errors:
       required_field: 'Preenchimento de campo obrigatório!'

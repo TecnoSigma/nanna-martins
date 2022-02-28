@@ -15,6 +15,7 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 
 Rails.application.config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
 Rails.application.config.assets.precompile += %w( nucleo-icons.css black-dashboard.css demo.css
+                                                  styles.css
                                                   jquery.min.js popper.min.js bootstrap.min.js
                                                   perfect-scrollbar.jquery.min.js chartjs.min.js
                                                   bootstrap-notify.js black-dashboard.min.js

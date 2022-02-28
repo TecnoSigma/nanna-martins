@@ -1,3 +1,8 @@
+unless Rails.env.production?
+  User.create(email: 'tecnooxossi@gmail.com', password: 'oxossi12')
+  User.create(email: 'ateliernammartins@gmail.com', password: 'inhasa21')
+end
+
 # Pins
 Pin.create(url: 'https://i.pinimg.com/75x75_RS/a5/f8/00/a5f80024f99c8294f9edfc298145ca03.jpg', segment: 'acessório')
 Pin.create(url: 'https://i.pinimg.com/75x75_RS/ef/b8/ee/efb8eed55f8f4489638c1b0a07264f4a.jpg', segment: 'acessório')
