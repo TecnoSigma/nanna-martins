@@ -8,3 +8,11 @@
   .menu-items-label:hover {
           text-decoration: underline;
   }
+
+.status-activated {
+  color: green !important;
+}
+
+.status-deactivated {
+  color: red !important;
+}

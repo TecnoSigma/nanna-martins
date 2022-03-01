@@ -1,0 +1,33 @@
+<div class="col-lg-12 col-md-12">
+  <div class="card ">
+    <div class="card-header">
+      <h4 class="card-title"><%= t('.customers') %></h4>
+    </div>
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table tablesorter " id="">
+          <thead class=" text-primary">
+            <tr>
+              <th><%= t('.name') %></th>
+              <th><%= t('.document') %></th>
+              <th><%= t('.email') %></th>
+              <th><%= t('.telephone') %></th>
+              <th><%= t('.address') %></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @customers.each do |customer| %>
+              <tr>
+                <td><span class="<%= change_color_status(customer) %>"><%= customer.name %></span></td>
+                <td width="150px"><span class="<%= change_color_status(customer) %>"><%= customer.document %></span></td>
+                <td><span class="<%= change_color_status(customer) %>"><%= customer.email %></td>
+                <td width="150px"><span class="<%= change_color_status(customer) %>"><%= customer.telephone %></span></td>
+                <td><span class="<%= change_color_status(customer) %>"><%= customer.full_address %></span></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

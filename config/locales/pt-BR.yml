@@ -27,3 +27,13 @@ pt-BR:
       required_field: 'Preenchimento de campo obrigatório!'
       invalid_quantity: 'Quantidade inválida!'
       invalid_format: 'Formato inválido!'
+  admin_panel:
+    customers:
+      index:
+        customers: 'Lista de Clientes'
+        name: 'Nome'
+        document: 'CPF/CNPJ'
+        site: 'Site'
+        email: 'Email'
+        telephone: 'Telefone'
+        address: 'Endereço'

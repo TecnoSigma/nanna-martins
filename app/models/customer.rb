@@ -29,4 +29,19 @@ class Customer < ApplicationRecord
   enum status: Statuses::CUSTOMERS
 
   has_many :orders
+
+  scope :ordered_by_name, -> { all.order(:name) }
+
+  def full_address
+    "#{self.address}, #{self.number} - #{self.complement} - #{self.district} - #{self.city} - " \
+    "#{self.state} - #{self.postal_code}"
+  end
+
+  def pendent?
+    self.status == 'pendent'
+  end
+
+  def activated?
+    self.status == 'activated'
+  end
 end

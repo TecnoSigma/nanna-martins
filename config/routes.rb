@@ -10,5 +10,7 @@ Rails.application.routes.draw do
 
   scope module: 'admin_panel', path: 'administrador', as: 'admin_panel' do
     get '/', to: 'dashboard#index'
+
+    get '/clientes', to: 'customers#index'
   end
 end

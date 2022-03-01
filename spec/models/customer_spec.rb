@@ -154,4 +154,83 @@ RSpec.describe Customer, type: :model do
       expect(customer).to respond_to(:orders)
     end
   end
+
+  describe '#full_address' do
+    it 'returns customer full address' do
+      customer = FactoryBot.create(:customer)
+
+      result = customer.full_address
+
+      expected_result = "#{customer.address}, #{customer.number} - #{customer.complement} - " \
+                        "#{customer.district} - #{customer.city} - #{customer.state} - " \
+                        "#{customer.postal_code}"
+
+      expect(result).to eq(expected_result)
+    end
+  end
+
+  describe 'validates scopes' do
+    it 'ordered by name' do
+      customer1 = FactoryBot.create(:customer, name: 'XPTO S.A.')
+      customer2 = FactoryBot.create(:customer, name: 'ABC S.A.')
+
+      result = Customer.ordered_by_name
+
+      expected_result = [customer2, customer1]
+
+      expect(result).to eq(expected_result)
+    end
+  end
+
+  describe '#pendent?' do
+    it 'returns \'true\' when customer status is pendent' do
+      customer = FactoryBot.create(:customer, status: 'pendent')
+
+      result = customer.pendent?
+
+      expect(result).to eq(true)
+    end
+
+    it 'returns \'false\' when customer status is activated' do
+      customer = FactoryBot.create(:customer, status: 'activated')
+
+      result = customer.pendent?
+
+      expect(result).to eq(false)
+    end
+
+    it 'returns \'true\' when customer status is deactivated' do
+      customer = FactoryBot.create(:customer, status: 'deactivated')
+
+      result = customer.pendent?
+
+      expect(result).to eq(false)
+    end
+  end
+
+  describe '#activated?' do
+    it 'returns \'false\' when customer status is pendent' do
+      customer = FactoryBot.create(:customer, status: 'pendent')
+
+      result = customer.activated?
+
+      expect(result).to eq(false)
+    end
+
+    it 'returns \'true\' when customer status is activated' do
+      customer = FactoryBot.create(:customer, status: 'activated')
+
+      result = customer.activated?
+
+      expect(result).to eq(true)
+    end
+
+    it 'returns \'false\' when customer status is deactivated' do
+      customer = FactoryBot.create(:customer, status: 'deactivated')
+
+      result = customer.activated?
+
+      expect(result).to eq(false)
+    end
+  end
 end
