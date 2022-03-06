@@ -73,6 +73,7 @@ pt-BR:
         email: 'Email'
         telephone: 'Telefone'
         address: 'Endereço'
+        actions: 'Ações'
       new:
         title: 'Novo Cliente'
       edit:
