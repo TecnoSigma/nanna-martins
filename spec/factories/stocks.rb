@@ -1,5 +1,5 @@
 FactoryBot.define do
-  factory :feedstock do
+  factory :stock do
     name { Faker::Lorem.word }
     measurement_unit { %w(cm gramas).sample }
     quantity { Faker::Number.number(digits: 2) }

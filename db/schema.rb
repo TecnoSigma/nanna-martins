@@ -21,12 +21,12 @@ ActiveRecord::Schema.define(version: 2022_02_25_000246) do
     t.string "description"
     t.string "periodicity"
     t.float "price"
-    t.string "name"
-    t.string "measurement_unit"
     t.bigint "craft_id"
+    t.bigint "stock_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["craft_id"], name: "index_costs_on_craft_id"
+    t.index ["stock_id"], name: "index_costs_on_stock_id"
   end
 
   create_table "crafts", force: :cascade do |t|
@@ -73,24 +73,6 @@ ActiveRecord::Schema.define(version: 2022_02_25_000246) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "feedstocks", force: :cascade do |t|
-    t.string "name"
-    t.float "price"
-    t.string "measurement_unit"
-    t.integer "quantity"
-    t.string "description"
-    t.integer "status", default: 1
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "feedstocks_providers", id: false, force: :cascade do |t|
-    t.bigint "feedstock_id", null: false
-    t.bigint "provider_id", null: false
-    t.index ["feedstock_id"], name: "index_feedstocks_providers_on_feedstock_id"
-    t.index ["provider_id"], name: "index_feedstocks_providers_on_provider_id"
-  end
-
   create_table "inspirations", force: :cascade do |t|
     t.string "type"
     t.string "url"
@@ -129,6 +111,24 @@ ActiveRecord::Schema.define(version: 2022_02_25_000246) do
     t.string "state"
     t.string "postal_code"
     t.string "telephone"
+    t.integer "status", default: 1
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "providers_stocks", id: false, force: :cascade do |t|
+    t.bigint "provider_id", null: false
+    t.bigint "stock_id", null: false
+    t.index ["provider_id"], name: "index_providers_stocks_on_provider_id"
+    t.index ["stock_id"], name: "index_providers_stocks_on_stock_id"
+  end
+
+  create_table "stocks", force: :cascade do |t|
+    t.string "name"
+    t.float "price"
+    t.string "measurement_unit"
+    t.integer "quantity"
+    t.string "description"
     t.integer "status", default: 1
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

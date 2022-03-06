@@ -19,7 +19,7 @@ class Provider < ApplicationRecord
 
   enum status: Statuses::PROVIDERS
 
-  has_and_belongs_to_many :feedstocks
+  has_and_belongs_to_many :stocks
 
   scope :ordered_by_name, -> { all.order(:name) }
 

@@ -19,6 +19,14 @@ RSpec.describe Statuses do
     expect(result).to eq(expected_result)
   end
 
+  it 'returns feedstock statuses' do
+    result = described_class::STOCKS
+
+    expected_result = { pendent: 0, activated: 1, deactivated: 2 }
+
+    expect(result).to eq(expected_result)
+ end
+
   it 'returns provider statuses' do
     result = described_class::PROVIDERS
 

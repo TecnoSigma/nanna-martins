@@ -79,7 +79,7 @@ RSpec.describe Provider, type: :model do
     it 'validates relationship N:N between Providers and Feedstocks' do
       provider = Provider.new
 
-      expect(provider).to respond_to(:feedstocks)
+      expect(provider).to respond_to(:stocks)
     end
   end
 
