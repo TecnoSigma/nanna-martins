@@ -31,6 +31,17 @@ class AdminPanel::CustomersController < ApplicationController
     redirect_to admin_panel_clientes_path, alert: t('messages.errors.search_data_failed')
   end
 
+  def update
+    customer = Customer.find(params['id'])
+    customer.update!(customer_params)
+
+    redirect_to admin_panel_clientes_path, notice: t('messages.successes.updated_data_successfully')
+  rescue StandardError => error
+    Rails.logger.error("Message: #{error.message} - Backtrace: #{error.backtrace}")
+
+    redirect_to admin_panel_clientes_path, alert: t('messages.errors.update_data_failed')
+  end
+
   private
 
   def customer_params

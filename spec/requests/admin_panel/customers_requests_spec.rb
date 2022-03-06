@@ -63,6 +63,138 @@ RSpec.describe AdminPanel::CustomersController, type: :request do
         end
       end
     end
+  end
+
+  describe 'PUT actions' do
+    describe '#update' do
+      context 'when customer is found' do
+        context 'and pass valid params' do
+          it 'updates customer data' do
+            customer = FactoryBot.create(:customer)
+
+            new_name = 'João da Silva'
+
+            put "/administrador/clientes/#{customer.id}/update", params: { customer: { name: new_name } }
+
+            result = Customer.find_by_name(new_name)
+
+            expect(result).to be_present
+          end
+
+          it 'redirects to customers page' do
+            customer = FactoryBot.create(:customer)
+
+            new_name = 'João da Silva'
+
+            put "/administrador/clientes/#{customer.id}/update", params: { customer: { name: new_name } }
+
+            expect(response).to redirect_to(admin_panel_clientes_path)
+          end
+
+          it 'shows success message' do
+            customer = FactoryBot.create(:customer)
+
+            new_name = 'João da Silva'
+
+            put "/administrador/clientes/#{customer.id}/update", params: { customer: { name: new_name } }
+
+            expect(flash[:notice]).to eq('Dados atualizados com sucesso!')
+          end
+        end
+
+        context 'and pass invalid params' do
+          it 'updates customer data' do
+            customer = FactoryBot.create(:customer)
+
+            new_document = '123456'
+
+            put "/administrador/clientes/#{customer.id}/update", params: { customer: { document: new_document } }
+
+            result = Customer.find_by_document(new_document)
+
+            expect(result).to be_nil
+          end
+
+          it 'redirects to customers page' do
+            customer = FactoryBot.create(:customer)
+
+            new_document = '123456'
+
+            put "/administrador/clientes/#{customer.id}/update", params: { customer: { document: new_document } }
+
+            expect(response).to redirect_to(admin_panel_clientes_path)
+          end
+
+          it 'shows error message' do
+            customer = FactoryBot.create(:customer)
+
+            new_document = '123456'
+
+            put "/administrador/clientes/#{customer.id}/update", params: { customer: { document: new_document } }
+
+            expect(flash[:alert]).to eq('Erro ao atualizar dados!')
+          end
+        end
+      end
+
+      context 'when customer is not found' do
+        it 'redirects to customers page' do
+          new_name = 'João da Silva'
+
+          put "/administrador/clientes/incorrect_id/update", params: { customer: { name: new_name } }
+
+          expect(response).to redirect_to(admin_panel_clientes_path)
+        end
+
+        it 'shows error message' do
+          new_name = 'João da Silva'
+
+          put "/administrador/clientes/incorrect_id/update", params: { customer: { name: new_name } }
+
+          expect(flash[:alert]).to eq('Erro ao atualizar dados!')
+        end
+      end
+
+      context 'when occurs errors' do
+        it 'no updates customer data' do
+          customer = FactoryBot.create(:customer)
+
+          new_name = 'João da Silva'
+
+          allow(Customer).to receive(:find) { raise StandardError }
+
+          put "/administrador/clientes/#{customer.id}/update", params: { customer: { name: new_name } }
+
+          result = Customer.find_by_name(new_name)
+
+          expect(result).to be_nil
+        end
+
+        it 'redirects to customers page' do
+          customer = FactoryBot.create(:customer)
+
+          new_name = 'João da Silva'
+
+          allow(Customer).to receive(:find) { raise StandardError }
+
+          put "/administrador/clientes/#{customer.id}/update", params: { customer: { name: new_name } }
+
+          expect(response).to redirect_to(admin_panel_clientes_path)
+        end
+
+        it 'shows error message' do
+          customer = FactoryBot.create(:customer)
+
+          new_name = 'João da Silva'
+
+          allow(Customer).to receive(:find) { raise StandardError }
+
+          put "/administrador/clientes/#{customer.id}/update", params: { customer: { name: new_name } }
+
+          expect(flash[:alert]).to eq('Erro ao atualizar dados!')
+        end
+      end
+    end
 
     describe '#new' do
       it 'renders new customer page' do

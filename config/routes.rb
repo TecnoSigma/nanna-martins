@@ -15,5 +15,6 @@ Rails.application.routes.draw do
     get  '/clientes/novo',       to: 'customers#new'
     get  '/clientes/:id/editar', to: 'customers#edit'
     post '/clientes/create',     to: 'customers#create'
+    put  '/clientes/:id/update', to: 'customers#update', as: 'update_customer'
   end
 end

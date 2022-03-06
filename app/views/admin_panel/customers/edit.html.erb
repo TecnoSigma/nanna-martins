@@ -3,7 +3,7 @@
     <div class="card-header">
       <h5 class="title"><%= t('.title') %></h5>
     </div>
-    <%= form_with scope: 'customer', url: admin_panel_clientes_create_path do |form| %>
+    <%= form_with scope: 'customer', url: admin_panel_update_customer_path, method: :put do |form| %>
       <%= render './././partials/customer_form', form: form %>
     <% end %>
   </div>
