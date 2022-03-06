@@ -195,7 +195,7 @@ RSpec.describe AdminPanel::CustomersController, type: :request do
         end
       end
 
-      describe '#change_status' do
+      describe '#status' do
         context 'when status is valid' do
           it 'updates status' do
             login_user

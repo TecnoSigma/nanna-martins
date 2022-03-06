@@ -203,6 +203,158 @@ RSpec.describe AdminPanel::ProvidersController, type: :request do
         end
       end
     end
+    
+    describe '#status' do
+      context 'when status is valid' do
+        it 'updates status' do
+          login_user
+
+          new_status = 'activated'
+          provider = FactoryBot.create(:provider, status: 'deactivated')
+
+          put "/administrador/fornecedores/#{provider.id}/status",
+              params: { status: new_status }
+
+          result = Provider.find_by_document(provider.document).status
+
+          expect(result).to eq(new_status)
+        end
+
+        it 'shows success message' do
+          login_user
+
+          new_status = 'activated'
+          provider = FactoryBot.create(:provider, status: 'deactivated')
+
+          put "/administrador/fornecedores/#{provider.id}/status",
+              params: { status: new_status }
+
+          expect(flash[:notice]).to eq('Dados atualizados com sucesso!')
+        end
+
+        it 'redirects to providers page' do
+          login_user
+
+          new_status = 'activated'
+          provider = FactoryBot.create(:provider, status: 'deactivated')
+
+          put "/administrador/fornecedores/#{provider.id}/status",
+              params: { status: new_status }
+
+          expect(response).to redirect_to(admin_panel_fornecedores_path)
+        end
+      end
+
+      context 'when status is invalid' do
+        it 'no updates status' do
+          login_user
+
+          new_status = 'invalid_status'
+          provider = FactoryBot.create(:provider, status: 'deactivated')
+
+          put "/administrador/fornecedores/#{provider.id}/status",
+              params: { status: new_status }
+
+          result = Provider.find_by_document(provider.document).status
+
+          expect(result).not_to eq(new_status)
+        end
+
+        it 'shows error message' do
+          login_user
+
+          new_status = 'invalid_status'
+          provider = FactoryBot.create(:provider, status: 'deactivated')
+
+          put "/administrador/fornecedores/#{provider.id}/status",
+              params: { status: new_status }
+
+          expect(flash[:alert]).to eq('Erro ao atualizar dados!')
+        end
+
+        it 'redirects to providers page' do
+          login_user
+
+          new_status = 'invalid_status'
+          provider = FactoryBot.create(:provider, status: 'deactivated')
+
+          put "/administrador/fornecedores/#{provider.id}/status",
+              params: { status: new_status }
+
+          expect(response).to redirect_to(admin_panel_fornecedores_path)
+        end
+      end
+
+      context 'when provider is not found' do
+        it 'shows error message' do
+          login_user
+
+          new_status = 'invalid_status'
+
+          put "/administrador/fornecedores/invalid_id/status",
+              params: { status: new_status }
+
+          expect(flash[:alert]).to eq('Erro ao atualizar dados!')
+        end
+
+        it 'redirects to providers page' do
+          login_user
+
+          new_status = 'invalid_status'
+
+          put "/administrador/fornecedores/invalid_id/status",
+              params: { status: new_status }
+
+          expect(response).to redirect_to(admin_panel_fornecedores_path)
+        end
+      end
+
+      context 'when occurs errors' do
+        it 'no updates status' do
+          login_user
+
+          new_status = 'activated'
+          provider = FactoryBot.create(:provider, status: 'deactivated')
+
+          allow(Provider).to receive(:find) { raise StandardError }
+
+          put "/administrador/fornecedores/#{provider.id}/status",
+              params: { status: new_status }
+
+          result = Provider.find_by_document(provider.document).status
+
+          expect(result).not_to eq(new_status)
+        end
+
+        it 'shows error message' do
+          login_user
+
+          new_status = 'activated'
+          provider = FactoryBot.create(:provider, status: 'deactivated')
+
+          allow(Provider).to receive(:find) { raise StandardError }
+
+          put "/administrador/fornecedores/#{provider.id}/status",
+              params: { status: new_status }
+
+          expect(flash[:alert]).to eq('Erro ao atualizar dados!')
+        end
+
+        it 'redirects to providers page' do
+          login_user
+
+          new_status = 'activated'
+          provider = FactoryBot.create(:provider, status: 'deactivated')
+
+          allow(Provider).to receive(:find) { raise StandardError }
+
+          put "/administrador/fornecedores/#{provider.id}/status",
+              params: { status: new_status }
+
+          expect(response).to redirect_to(admin_panel_fornecedores_path)
+        end
+      end
+    end
   end
 
   describe 'POST actions' do

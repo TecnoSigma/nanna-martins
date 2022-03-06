@@ -28,6 +28,19 @@
                 <td width="150px"><span class="<%= change_color_status(provider) %>"><%= provider.telephone %></span></td>
                 <td><span class="<%= change_color_status(provider) %>"><%= provider.full_address %></span></td>
                 <td>
+                  <% if provider.activated? %>
+                    <%= link_to admin_panel_change_provider_status_path(provider.id, params: { status: t('.deactivated') }), method: :put, title: t('.deactive') do %>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-toggle-on" viewBox="0 0 16 16">
+                        <path d="M5 3a5 5 0 0 0 0 10h6a5 5 0 0 0 0-10H5zm6 9a4 4 0 1 1 0-8 4 4 0 0 1 0 8z"/>
+                      </svg>
+                    <% end %>
+                  <% else %>
+                    <%= link_to admin_panel_change_provider_status_path(provider.id, params: { status: t('.activated') }), method: :put, title: t('.active') do %>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-toggle-off" viewBox="0 0 16 16">
+                       <path d="M11 4a4 4 0 0 1 0 8H8a4.992 4.992 0 0 0 2-4 4.992 4.992 0 0 0-2-4h3zm-6 8a4 4 0 1 1 0-8 4 4 0 0 1 0 8zM0 8a5 5 0 0 0 5 5h6a5 5 0 0 0 0-10H5a5 5 0 0 0-5 5z"/>
+                      </svg>
+                    <% end %>
+                  <% end %>
                   <%= link_to admin_panel_edit_provider_path(provider.id) do %>
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
                       <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>

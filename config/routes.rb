@@ -24,6 +24,7 @@ Rails.application.routes.draw do
     get    '/fornecedores/:id/editar', to: 'providers#edit', as: 'edit_provider'
     post   '/fornecedores/create',     to: 'providers#create'
     put    '/fornecedores/:id/update', to: 'providers#update', as: 'update_provider'
+    put    '/fornecedores/:id/status', to: 'providers#status', as: 'change_provider_status'
     delete '/fornecedores/:id/delete', to: 'providers#delete', as: 'delete_provider'
   end
 end

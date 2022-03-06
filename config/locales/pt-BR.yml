@@ -110,6 +110,10 @@ pt-BR:
         title: 'Edição de Dados'
     providers:
       index:
+        activated: 'activated'
+        deactivated: 'deactivated'
+        active: 'Ativar'
+        deactive: 'Desativar'
         add_provider_btn: 'Adicionar Fornecedor'
         title: 'Lista de Fornecedores'
         name: 'Nome'
