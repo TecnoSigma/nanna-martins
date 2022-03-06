@@ -92,14 +92,6 @@ RSpec.describe Customer, type: :model do
       expect(customer.errors.messages[:cellphone]).to include(error_message)
     end
 
-    it 'no validates when not pass email' do
-      error_message = 'Preenchimento de campo obrigatório!'
-      customer = FactoryBot.build(:customer, email: nil)
-
-      expect(customer).to be_invalid
-      expect(customer.errors.messages[:email]).to include(error_message)
-    end
-
     it 'no validates when not pass status' do
       error_message = 'Preenchimento de campo obrigatório!'
       customer = FactoryBot.build(:customer, status: nil)

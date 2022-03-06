@@ -24,32 +24,21 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-md-5 pr-md-1">
+    <div class="col-md-6 pr-md-1">
       <div class="form-group">
         <label><%= t('.contact') %></label>
         <%= form.text_field 'contact', class: 'form-control', required: true %>
       </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="col-md-6 pr-md-1">
+    <div class="col-md-6 pl-md-1">
       <div class="form-group">
         <label>
           <%= t('.telephone') %>
         </label>
         <%= form.text_field 'telephone',
-                         class: 'form-control',
-                         required: true,
-                         placeholder: t('.placeholders.telephone') %>
-      </div>
-    </div>
-    <div class="col-md-6 pl-md-1">
-      <div class="form-group">
-        <label><%= t('.cellphone') %></label>
-        <%= form.text_field 'cellphone',
-                         class: 'form-control',
-                         required: true,
-                         placeholder: t('.placeholders.cellphone')%>
+                            class: 'form-control',
+                            required: true,
+                            placeholder: t('.placeholders.telephone') %>
       </div>
     </div>
   </div>

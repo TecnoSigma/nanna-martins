@@ -82,4 +82,83 @@ RSpec.describe Provider, type: :model do
       expect(provider).to respond_to(:feedstocks)
     end
   end
+
+  describe '#full_address' do
+    it 'returns provider full address' do
+      provider = FactoryBot.create(:provider)
+
+      result = provider.full_address
+
+      expected_result = "#{provider.address}, #{provider.number} - #{provider.complement} - " \
+                        "#{provider.district} - #{provider.city} - #{provider.state} - " \
+                        "#{provider.postal_code}"
+
+      expect(result).to eq(expected_result)
+    end
+  end
+
+  describe 'validates scopes' do
+    it 'ordered by name' do
+      provider1 = FactoryBot.create(:provider, name: 'XPTO S.A.')
+      provider2 = FactoryBot.create(:provider, name: 'ABC S.A.')
+
+      result = Provider.ordered_by_name
+
+      expected_result = [provider2, provider1]
+
+      expect(result).to eq(expected_result)
+    end
+  end
+
+  describe '#pendent?' do
+    it 'returns \'true\' when provider status is pendent' do
+      provider = FactoryBot.create(:provider, status: 'pendent')
+
+      result = provider.pendent?
+
+      expect(result).to eq(true)
+    end
+
+    it 'returns \'false\' when provider status is activated' do
+      provider = FactoryBot.create(:provider, status: 'activated')
+
+      result = provider.pendent?
+
+      expect(result).to eq(false)
+    end
+
+    it 'returns \'true\' when provider status is deactivated' do
+      provider = FactoryBot.create(:provider, status: 'deactivated')
+
+      result = provider.pendent?
+
+      expect(result).to eq(false)
+    end
+  end
+
+  describe '#activated?' do
+    it 'returns \'false\' when provider status is pendent' do
+      provider = FactoryBot.create(:provider, status: 'pendent')
+
+      result = provider.activated?
+
+      expect(result).to eq(false)
+    end
+
+    it 'returns \'true\' when provider status is activated' do
+      provider = FactoryBot.create(:provider, status: 'activated')
+
+      result = provider.activated?
+
+      expect(result).to eq(true)
+    end
+
+    it 'returns \'false\' when provider status is deactivated' do
+      provider = FactoryBot.create(:provider, status: 'deactivated')
+
+      result = provider.activated?
+
+      expect(result).to eq(false)
+    end
+  end
 end

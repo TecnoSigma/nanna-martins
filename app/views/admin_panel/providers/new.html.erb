@@ -1,0 +1,10 @@
+<div class="col-md-10">
+  <div class="card">
+    <div class="card-header">
+      <h5 class="title"><%= t('.title') %></h5>
+    </div>
+    <%= form_with scope: 'provider', url: admin_panel_fornecedores_create_path do |form| %>
+      <%= render './././partials/provider_form', form: form %>
+    <% end %>
+  </div>
+</div>

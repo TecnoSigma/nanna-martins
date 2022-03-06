@@ -36,6 +36,32 @@ pt-BR:
       updated_data_successfully: 'Dados atualizados com sucesso!'
       deleted_data_successfully: 'Dados removidos com sucesso!'
   partials:
+    provider_form:
+      title: 'Novo Cliente'
+      required_field: '(*) Campos obrigatórios'
+      name: 'Nome *'
+      document: 'Documento *'
+      contact: 'Contato *'
+      telephone: 'Telefone *'
+      cellphone: 'Celular *'
+      site: 'Site'
+      email: 'Email'
+      address: 'Endereço *'
+      number: 'Número *'
+      complement: 'Complemento'
+      default_kind: 'PF'
+      kind: 'Tipo *'
+      district: 'Bairro *'
+      city: 'Cidade *'
+      state: 'Estado *'
+      default_state: 'São Paulo'
+      postal_code: 'CEP *'
+      save_data_btn: 'Salvar Dados'
+      placeholders:
+        cellphone: '(00) 9 0000 0000'
+        telephone: '(00) 0000 0000'
+        postal_code: '00000-000'
+        document: '000.000.000-00 ou 00.000.000/0000-00'
     customer_form:
       title: 'Novo Cliente'
       required_field: '(*) Campos obrigatórios'
@@ -66,7 +92,22 @@ pt-BR:
     customers:
       index:
         add_customer_btn: 'Adicionar Cliente'
-        customers: 'Lista de Clientes'
+        title: 'Lista de Clientes'
+        name: 'Nome'
+        document: 'CPF/CNPJ'
+        site: 'Site'
+        email: 'Email'
+        telephone: 'Telefone'
+        address: 'Endereço'
+        actions: 'Ações'
+      new:
+        title: 'Novo Cliente'
+      edit:
+        title: 'Edição de Dados'
+    providers:
+      index:
+        add_provider_btn: 'Adicionar Fornecedor'
+        title: 'Lista de Fornecedores'
         name: 'Nome'
         document: 'CPF/CNPJ'
         site: 'Site'

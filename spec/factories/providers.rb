@@ -18,6 +18,6 @@ FactoryBot.define do
     end
     site { Faker::Internet.url }
     email { Faker::Internet.email }
-    status { :activated }
+    status { %w(activated deactivated pendent).sample }
   end
 end

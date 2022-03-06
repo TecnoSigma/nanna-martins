@@ -3,6 +3,8 @@ unless Rails.env.production?
   User.create(email: 'ateliernammartins@gmail.com', password: 'inhasa21')
 
   FactoryBot.create_list(:customer, 30)
+
+  FactoryBot.create_list(:provider, 40)
 end
 
 # Pins
