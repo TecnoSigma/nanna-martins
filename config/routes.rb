@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   scope module: 'admin_panel', path: 'administrador', as: 'admin_panel' do
     get '/', to: 'dashboard#index'
 
-    get '/clientes', to: 'customers#index'
+    get  '/clientes',        to: 'customers#index'
+    get  '/clientes/novo',   to: 'customers#new'
+    post '/clientes/create', to: 'customers#create'
   end
 end

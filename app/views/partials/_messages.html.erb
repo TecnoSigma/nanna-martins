@@ -1,0 +1,13 @@
+<% if flash[:notice] %>
+  <div class="card bg-success text-white mb-4">
+    <div class="card-body"><%= flash[:notice] %></div>
+    <div class="card-footer d-flex align-items-center justify-content-between"></div>
+  </div>
+<% end %>
+
+<% if flash[:alert] %>
+  <div class="card bg-danger text-white mb-4">
+    <div class="card-body"><%= flash[:alert] %></div>
+    <div class="card-footer d-flex align-items-center justify-content-between"></div>
+  </div>
+<% end %>

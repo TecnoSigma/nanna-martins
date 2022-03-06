@@ -27,9 +27,13 @@ pt-BR:
       required_field: 'Preenchimento de campo obrigatório!'
       invalid_quantity: 'Quantidade inválida!'
       invalid_format: 'Formato inválido!'
+      save_data_failed: 'Erro ao gravar dados!'
+    successes:
+      saved_data_successfully: 'Dados gravados com sucesso!'
   admin_panel:
     customers:
       index:
+        add_customer_btn: 'Adicionar Cliente'
         customers: 'Lista de Clientes'
         name: 'Nome'
         document: 'CPF/CNPJ'
@@ -37,3 +41,29 @@ pt-BR:
         email: 'Email'
         telephone: 'Telefone'
         address: 'Endereço'
+      new:
+        title: 'Novo Cliente'
+        required_field: '(*) Campos obrigatórios'
+        name: 'Nome *'
+        document: 'Documento *'
+        contact: 'Contato *'
+        telephone: 'Telefone *'
+        cellphone: 'Celular *'
+        site: 'Site'
+        email: 'Email'
+        address: 'Endereço *'
+        number: 'Número *'
+        complement: 'Complemento'
+        default_kind: 'PF'
+        kind: 'Tipo *'
+        district: 'Bairro *'
+        city: 'Cidade *'
+        state: 'Estado *'
+        default_state: 'São Paulo'
+        postal_code: 'CEP *'
+        save_data_btn: 'Gravar Dados'
+        placeholders:
+          cellphone: '(00) 9 0000 0000'
+          telephone: '(00) 0000 0000'
+          postal_code: '00000-000'
+          document: '000.000.000-00 ou 00.000.000/0000-00'

@@ -12,6 +12,8 @@ services:
       - .:/var/www/nanna-martins
     ports:
       - "3000:3000"
+    tty: true
+    stdin_open: true
   postgres:
     image: postgres:12.3
     environment:

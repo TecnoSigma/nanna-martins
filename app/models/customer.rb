@@ -10,7 +10,6 @@ class Customer < ApplicationRecord
             :state,
             :postal_code,
             :cellphone,
-            :email,
             :status,
             presence: { message: Messages.errors[:required_field] }
 

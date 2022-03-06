@@ -1,6 +1,9 @@
+<%= render './././partials/messages' %>
 <div class="col-lg-12 col-md-12">
   <div class="card ">
     <div class="card-header">
+      <%= link_to t('.add_customer_btn'), admin_panel_clientes_novo_path, class: 'btn btn-fill btn-primary' %>
+      <hr>
       <h4 class="card-title"><%= t('.customers') %></h4>
     </div>
     <div class="card-body">
