@@ -30,9 +30,11 @@ pt-BR:
       save_data_failed: 'Erro ao gravar dados!'
       search_data_failed: 'Erro ao procurar dados!'
       update_data_failed: 'Erro ao atualizar dados!'
+      delete_data_failed: 'Erro ao remover dados!'
     successes:
       saved_data_successfully: 'Dados gravados com sucesso!'
       updated_data_successfully: 'Dados atualizados com sucesso!'
+      deleted_data_successfully: 'Dados removidos com sucesso!'
   partials:
     customer_form:
       title: 'Novo Cliente'

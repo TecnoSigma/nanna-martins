@@ -262,4 +262,72 @@ RSpec.describe AdminPanel::CustomersController, type: :request do
       end
     end
   end
+
+  describe 'DELETE actions' do
+    describe '#delete' do
+      context 'and pass valid params' do
+        it 'deletes customer' do
+          customer = FactoryBot.create(:customer)
+
+          new_name = 'João da Silva'
+
+          delete "/administrador/clientes/#{customer.id}/delete"
+
+          result = Customer.find_by_name(new_name)
+
+          expect(result).to be_nil
+        end
+
+        it 'redirects to customers page' do
+          customer = FactoryBot.create(:customer)
+
+          delete "/administrador/clientes/#{customer.id}/delete"
+
+          expect(response).to redirect_to(admin_panel_clientes_path)
+        end
+
+        it 'shows success message' do
+          customer = FactoryBot.create(:customer)
+
+          delete "/administrador/clientes/#{customer.id}/delete"
+
+          expect(flash[:notice]).to eq('Dados removidos com sucesso!')
+        end
+      end
+
+      context 'when occurs errors' do
+        it 'no deletes customer' do
+          customer = FactoryBot.create(:customer)
+
+          allow(Customer).to receive(:find) { raise StandardError }
+
+          delete "/administrador/clientes/#{customer.id}/delete"
+
+          result = Customer.find_by_name(customer.name)
+
+          expect(result).to be_present
+        end
+
+        it 'redirects to customers page' do
+          customer = FactoryBot.create(:customer)
+
+          allow(Customer).to receive(:find) { raise StandardError }
+
+          delete "/administrador/clientes/#{customer.id}/delete"
+
+          expect(response).to redirect_to(admin_panel_clientes_path)
+        end
+
+        it 'shows success message' do
+          customer = FactoryBot.create(:customer)
+
+          allow(Customer).to receive(:find) { raise StandardError }
+
+          delete "/administrador/clientes/#{customer.id}/delete"
+
+          expect(flash[:alert]).to eq('Erro ao remover dados!')
+        end
+      end
+    end
+  end
 end
