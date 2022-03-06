@@ -91,6 +91,10 @@ pt-BR:
   admin_panel:
     customers:
       index:
+        activated: 'activated'
+        deactivated: 'deactivated'
+        active: 'Ativar'
+        deactive: 'Desativar'
         add_customer_btn: 'Adicionar Cliente'
         title: 'Lista de Clientes'
         name: 'Nome'

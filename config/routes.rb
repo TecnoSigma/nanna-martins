@@ -13,9 +13,10 @@ Rails.application.routes.draw do
 
     get    '/clientes',            to: 'customers#index'
     get    '/clientes/novo',       to: 'customers#new'
-    get    '/clientes/:id/editar', to: 'customers#edit', as: 'edit_customer'
+    get    '/clientes/:id/editar', to: 'customers#edit',   as: 'edit_customer'
     post   '/clientes/create',     to: 'customers#create'
     put    '/clientes/:id/update', to: 'customers#update', as: 'update_customer'
+    put    '/clientes/:id/status', to: 'customers#status', as: 'change_customer_status'
     delete '/clientes/:id/delete', to: 'customers#delete', as: 'delete_customer'
 
     get    '/fornecedores',            to: 'providers#index'

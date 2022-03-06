@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class AdminPanel::CustomersController < ApplicationController
+class AdminPanel::CustomersController < AdminPanel::DashboardController
   before_action :authenticate_user!
 
   def index
@@ -51,6 +51,16 @@ class AdminPanel::CustomersController < ApplicationController
     Rails.logger.error("Message: #{error.message} - Backtrace: #{error.backtrace}")
 
     redirect_to admin_panel_clientes_path, alert: t('messages.errors.delete_data_failed')
+  end
+
+  def status
+    change_status!(Customer)
+
+    redirect_to admin_panel_clientes_path, notice: t('messages.successes.updated_data_successfully')
+  rescue StandardError => error
+    Rails.logger.error("Message: #{error.message} - Backtrace: #{error.backtrace}")
+
+    redirect_to admin_panel_clientes_path, alert: t('messages.errors.update_data_failed')
   end
 
   private

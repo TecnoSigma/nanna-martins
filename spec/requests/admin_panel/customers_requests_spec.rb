@@ -194,6 +194,158 @@ RSpec.describe AdminPanel::CustomersController, type: :request do
           expect(flash[:alert]).to eq('Erro ao atualizar dados!')
         end
       end
+
+      describe '#change_status' do
+        context 'when status is valid' do
+          it 'updates status' do
+            login_user
+
+            new_status = 'activated'
+            customer = FactoryBot.create(:customer, status: 'deactivated')
+
+            put "/administrador/clientes/#{customer.id}/status",
+                params: { status: new_status }
+
+            result = Customer.find_by_document(customer.document).status
+
+            expect(result).to eq(new_status)
+          end
+
+          it 'shows success message' do
+            login_user
+
+            new_status = 'activated'
+            customer = FactoryBot.create(:customer, status: 'deactivated')
+
+            put "/administrador/clientes/#{customer.id}/status",
+                params: { status: new_status }
+
+            expect(flash[:notice]).to eq('Dados atualizados com sucesso!')
+          end
+
+          it 'redirects to customers page' do
+            login_user
+
+            new_status = 'activated'
+            customer = FactoryBot.create(:customer, status: 'deactivated')
+
+            put "/administrador/clientes/#{customer.id}/status",
+                params: { status: new_status }
+
+            expect(response).to redirect_to(admin_panel_clientes_path)
+          end
+        end
+
+        context 'when status is invalid' do
+          it 'no updates status' do
+            login_user
+
+            new_status = 'invalid_status'
+            customer = FactoryBot.create(:customer, status: 'deactivated')
+
+            put "/administrador/clientes/#{customer.id}/status",
+                params: { status: new_status }
+
+            result = Customer.find_by_document(customer.document).status
+
+            expect(result).not_to eq(new_status)
+          end
+
+          it 'shows error message' do
+            login_user
+
+            new_status = 'invalid_status'
+            customer = FactoryBot.create(:customer, status: 'deactivated')
+
+            put "/administrador/clientes/#{customer.id}/status",
+                params: { status: new_status }
+
+            expect(flash[:alert]).to eq('Erro ao atualizar dados!')
+          end
+
+          it 'redirects to customers page' do
+            login_user
+
+            new_status = 'invalid_status'
+            customer = FactoryBot.create(:customer, status: 'deactivated')
+
+            put "/administrador/clientes/#{customer.id}/status",
+                params: { status: new_status }
+
+            expect(response).to redirect_to(admin_panel_clientes_path)
+          end
+        end
+
+        context 'when customer is not found' do
+          it 'shows error message' do
+            login_user
+
+            new_status = 'invalid_status'
+
+            put "/administrador/clientes/invalid_id/status",
+                params: { status: new_status }
+
+            expect(flash[:alert]).to eq('Erro ao atualizar dados!')
+          end
+
+          it 'redirects to customers page' do
+            login_user
+
+            new_status = 'invalid_status'
+
+            put "/administrador/clientes/invalid_id/status",
+                params: { status: new_status }
+
+            expect(response).to redirect_to(admin_panel_clientes_path)
+          end
+        end
+
+        context 'when occurs errors' do
+          it 'no updates status' do
+            login_user
+
+            new_status = 'activated'
+            customer = FactoryBot.create(:customer, status: 'deactivated')
+
+            allow(Customer).to receive(:find) { raise StandardError }
+
+            put "/administrador/clientes/#{customer.id}/status",
+                params: { status: new_status }
+
+            result = Customer.find_by_document(customer.document).status
+
+            expect(result).not_to eq(new_status)
+          end
+
+          it 'shows error message' do
+            login_user
+
+            new_status = 'activated'
+            customer = FactoryBot.create(:customer, status: 'deactivated')
+
+            allow(Customer).to receive(:find) { raise StandardError }
+
+            put "/administrador/clientes/#{customer.id}/status",
+                params: { status: new_status }
+
+            expect(flash[:alert]).to eq('Erro ao atualizar dados!')
+          end
+
+          it 'redirects to customers page' do
+            login_user
+
+            new_status = 'activated'
+            customer = FactoryBot.create(:customer, status: 'deactivated')
+
+            allow(Customer).to receive(:find) { raise StandardError }
+
+            put "/administrador/clientes/#{customer.id}/status",
+                params: { status: new_status }
+
+            expect(response).to redirect_to(admin_panel_clientes_path)
+          end
+        end
+      end
     end
 
     describe '#new' do
