@@ -16,6 +16,54 @@ RSpec.describe AdminPanel::CustomersController, type: :request do
       end
     end
 
+    describe '#edit' do
+      context 'when customer is found' do
+        it 'renders customers edit page' do
+          customer = FactoryBot.create(:customer)
+
+          get "/administrador/clientes/#{customer.id}/editar"
+
+          expect(response).to render_template(:edit)
+        end
+      end
+
+      context 'when customer is not found' do
+        it 'redirects to customers page' do
+          get "/administrador/clientes/incorrect_id/editar"
+
+          expect(response).to redirect_to(admin_panel_clientes_path)
+        end
+
+        it 'shows error message' do
+          get "/administrador/clientes/incorrect_id/editar"
+
+          expect(flash[:alert]).to eq('Erro ao procurar dados!')
+        end
+      end
+
+      context 'when occurs errors' do
+        it 'redirects to customers page' do
+          customer = FactoryBot.create(:customer)
+
+          allow(Customer).to receive(:find) { raise StandardError }
+
+          get "/administrador/clientes/#{customer.id}/editar"
+
+          expect(response).to redirect_to(admin_panel_clientes_path)
+        end
+
+        it 'shows error message' do
+          customer = FactoryBot.create(:customer)
+
+          allow(Customer).to receive(:find) { raise StandardError }
+
+          get "/administrador/clientes/#{customer.id}/editar"
+
+          expect(flash[:alert]).to eq('Erro ao procurar dados!')
+        end
+      end
+    end
+
     describe '#new' do
       it 'renders new customer page' do
         get '/administrador/clientes/novo'
