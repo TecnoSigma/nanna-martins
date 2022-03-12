@@ -9,7 +9,7 @@ pt-BR:
       menu:
         customers: 'Clientes'
         providers: 'Fornecedores'
-        feedstocks: 'Matérias-Primas'
+        stocks: 'Estoques'
         orders: 'Pedidos'
         crafts: 'Artes'
         inspirations: 'Inspirações'
@@ -89,6 +89,22 @@ pt-BR:
         postal_code: '00000-000'
         document: '000.000.000-00 ou 00.000.000/0000-00'
   admin_panel:
+    stocks:
+      index:
+        title: 'Estoque de Materiais'
+        add_item_btn: 'Adicionar Item'
+        name: 'Nome'
+        reference: 'Referência'
+        description: 'Descrição'
+        quantity: 'Quantidade'
+        measurement_unit: 'Unidade'
+        unit_price: 'Preço Unitário'
+        total_price: 'Preço Total'
+        actions: 'Ações'
+      new:
+        title: 'Novo Item'
+      edit:
+        title: 'Edição de Dados'
     customers:
       index:
         activated: 'activated'

@@ -126,6 +126,7 @@ ActiveRecord::Schema.define(version: 2022_02_25_000246) do
   create_table "stocks", force: :cascade do |t|
     t.string "name"
     t.float "price"
+    t.string "reference"
     t.string "measurement_unit"
     t.integer "quantity"
     t.string "description"

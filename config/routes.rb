@@ -26,5 +26,13 @@ Rails.application.routes.draw do
     put    '/fornecedores/:id/update', to: 'providers#update', as: 'update_provider'
     put    '/fornecedores/:id/status', to: 'providers#status', as: 'change_provider_status'
     delete '/fornecedores/:id/delete', to: 'providers#delete', as: 'delete_provider'
+    
+    get    '/estoques',            to: 'stocks#index'
+    get    '/estoques/novo',       to: 'stocks#new'
+    get    '/estoques/:id/editar', to: 'stocks#edit', as: 'edit_stock'
+    post   '/estoques/create',     to: 'stocks#create'
+    put    '/estoques/:id/update', to: 'stocks#update', as: 'update_stock'
+    put    '/estoques/:id/status', to: 'stocks#status', as: 'change_stock_status'
+    delete '/estoques/:id/delete', to: 'stocks#delete', as: 'delete_stock'
   end
 end

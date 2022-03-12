@@ -4,7 +4,12 @@ unless Rails.env.production?
 
   FactoryBot.create_list(:customer, 30)
 
-  FactoryBot.create_list(:provider, 40)
+  FactoryBot.create_list(:provider, 20)
+
+  for _ in 1..100 do
+    provider_id = (Provider.first.id..Provider.count).to_a.sample
+    FactoryBot.create(:stock, providers: [Provider.find(provider_id)])
+  end
 end
 
 # Pins
