@@ -8,11 +8,13 @@ RSpec.describe AdminPanel::ProvidersController, type: :request do
   before(:each) { login_user }
 
   describe 'GET actions' do
-    describe '#index' do
+    describe '#details' do
       it 'renders providers page' do
-        get '/administrador/fornecedores'
+        provider = FactoryBot.create(:provider)
 
-        expect(response).to render_template(:index)
+        get "/administrador/fornecedores/#{provider.id}/detalhes"
+
+        expect(response).to render_template(:details)
       end
     end
 
@@ -203,7 +205,7 @@ RSpec.describe AdminPanel::ProvidersController, type: :request do
         end
       end
     end
-    
+
     describe '#status' do
       context 'when status is valid' do
         it 'updates status' do

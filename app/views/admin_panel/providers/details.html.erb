@@ -1,0 +1,106 @@
+<div class="col-md-10">
+  <div class="card">
+    <div class="card-header" />
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-5 pr-md-1">
+          <div class="form-group">
+            <label><%= t('.name') %></label>
+            <span class="form-control"><%= @provider.name %></span>
+          </div>
+        </div>
+        <div class="col-md-5 px-md-1">
+          <div class="form-group">
+            <label><%= t('.document') %></label>
+            <span class="form-control"><%= @provider.document %></span>
+          </div>
+        </div>
+        <div class="col-md-2 pl-md-1">
+          <div class="form-group">
+            <label><%= t('.kind') %></label>
+            <span class="form-control"><%= @provider.kind %></span>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 pr-md-1">
+          <div class="form-group">
+            <label><%= t('.contact') %></label>
+            <span class="form-control"><%= @provider.contact %></span>
+          </div>
+        </div>
+        <div class="col-md-6 pl-md-1">
+          <div class="form-group">
+            <label><%= t('.telephone') %></label>
+            <span class="form-control"><%= @provider.telephone %></span>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 pr-md-1">
+          <div class="form-group">
+            <label><%= t('.site') %></label>
+            <span class="form-control"><%= @provider.site %></span>
+          </div>
+        </div>
+        <div class="col-md-6 pl-md-1">
+          <div class="form-group">
+            <label><%= t('.email') %></label>
+            <span class="form-control"><%= @provider.email %></span>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 pr-md-1">
+          <div class="form-group">
+            <label><%= t('.address') %></label>
+            <span class="form-control"><%= @provider.address %></span>
+          </div>
+        </div>
+        <div class="col-md-2 px-md-1">
+          <div class="form-group">
+            <label><%= t('.number') %></label>
+            <span class="form-control"><%= @provider.number %></span>
+          </div>
+        </div>
+        <div class="col-md-4 pl-md-1">
+          <div class="form-group">
+            <label><%= t('.complement') %></label>
+            <span class="form-control"><%= @provider.complement %></span>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-3 pr-md-1">
+          <div class="form-group">
+            <label><%= t('.district') %></label>
+            <span class="form-control"><%= @provider.district %></span>
+          </div>
+        </div>
+        <div class="col-md-3 px-md-1">
+          <div class="form-group">
+            <label><%= t('.city') %></label>
+            <span class="form-control"><%= @provider.city %></span>
+          </div>
+        </div>
+        <div class="col-md-3 px-md-1">
+          <div class="form-group">
+            <label><%= t('.state') %></label>
+            <span class="form-control"><%= @provider.state %></span>
+          </div>
+        </div>
+        <div class="col-md-3 pl-md-1">
+          <div class="form-group">
+            <label><%= t('.postal_code') %></label>
+            <span class="form-control"><%= @provider.postal_code %></span>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-3 pr-md-1">
+          <%= link_to t('.edit_data_btn'), admin_panel_edit_provider_path(@provider.id), class: 'btn btn-fill btn-primary' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

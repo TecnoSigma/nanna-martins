@@ -85,4 +85,17 @@ RSpec.describe Stock, type: :model do
       expect(result).to eq(total_price)
     end
   end
+
+  describe '#providers_list' do
+    it 'returns providers list' do
+      provider = FactoryBot.create(:provider)
+      stock = FactoryBot.create(:stock, providers: [provider])
+
+      expected_result = [{ id: provider.id, name: provider.name }]
+
+      result = stock.providers_list
+
+      expect(result).to eq(expected_result)
+    end
+  end
 end

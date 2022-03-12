@@ -6,13 +6,22 @@
         margin-left:10px;
 }
   .menu-items-label:hover {
-          text-decoration: underline;
+        text-decoration: underline;
   }
 
 .status-activated {
-  color: green !important;
+        color: green !important;
 }
 
 .status-deactivated {
-  color: red !important;
+        color: red !important;
+}
+
+.custom-modal-title {
+        font-size: 20px;
+        color: white;
+}
+
+.custom-modal-content {
+          background-color: #525F7F
 }

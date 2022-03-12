@@ -11,6 +11,10 @@ class AdminPanel::ProvidersController < AdminPanel::DashboardController
     @provider = Provider.new
   end
 
+  def details
+    @provider = Provider.find(params['id'])
+  end
+
   def create
     new_provider = Provider.new(provider_params)
     new_provider.validate!

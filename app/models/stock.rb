@@ -16,4 +16,8 @@ class Stock < ApplicationRecord
   def total_price
     (self.price * self.quantity.to_f).round(2)
   end
+
+  def providers_list
+    providers.map { |provider| { id: provider.id, name: provider.name } }
+  end
 end

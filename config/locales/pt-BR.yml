@@ -36,6 +36,8 @@ pt-BR:
       updated_data_successfully: 'Dados atualizados com sucesso!'
       deleted_data_successfully: 'Dados removidos com sucesso!'
   partials:
+    providers:
+      providers_list: 'Lista de Fornecedores do Produto %{product}'
     provider_form:
       title: 'Novo Cliente'
       required_field: '(*) Campos obrigatórios'
@@ -139,6 +141,23 @@ pt-BR:
         telephone: 'Telefone'
         address: 'Endereço'
         actions: 'Ações'
+      details:
+        name: 'Nome'
+        document: 'Documento'
+        contact: 'Contato'
+        telephone: 'Telefone'
+        cellphone: 'Celular'
+        site: 'Site'
+        email: 'Email'
+        address: 'Endereço'
+        number: 'Número'
+        complement: 'Complemento'
+        kind: 'Tipo'
+        district: 'Bairro'
+        city: 'Cidade'
+        state: 'Estado'
+        postal_code: 'CEP'
+        edit_data_btn: 'Editar Dados'
       new:
         title: 'Novo Cliente'
       edit:
