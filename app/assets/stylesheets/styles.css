@@ -23,5 +23,13 @@
 }
 
 .custom-modal-content {
-          background-color: #525F7F
+        background-color: #525F7F;
+}
+
+.inspirations-icons svg {
+        display: block;
+        width: 50%;
+        height: auto;
+        margin-left: auto;
+        margin-right: auto;
 }

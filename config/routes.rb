@@ -35,5 +35,7 @@ Rails.application.routes.draw do
     put    '/estoques/:id/update', to: 'stocks#update', as: 'update_stock'
     put    '/estoques/:id/status', to: 'stocks#status', as: 'change_stock_status'
     delete '/estoques/:id/delete', to: 'stocks#delete', as: 'delete_stock'
+
+    get '/inspiracoes', to: 'inspirations#index'
   end
 end
