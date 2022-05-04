@@ -36,6 +36,7 @@ Rails.application.routes.draw do
     put    '/estoques/:id/status', to: 'stocks#status', as: 'change_stock_status'
     delete '/estoques/:id/delete', to: 'stocks#delete', as: 'delete_stock'
 
-    get '/inspiracoes', to: 'inspirations#index'
+    get '/inspiracoes',              to: 'inspirations#index'
+    get '/inspiracoes/:kind/listar', to: 'inspirations#list'
   end
 end
