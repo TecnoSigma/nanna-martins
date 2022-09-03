@@ -37,6 +37,6 @@ Rails.application.routes.draw do
     delete '/estoques/:id/delete', to: 'stocks#delete', as: 'delete_stock'
 
     get '/inspiracoes',              to: 'inspirations#index'
-    get '/inspiracoes/:kind/listar', to: 'inspirations#list'
+    get '/inspiracoes/pinterest',    to: 'inspirations#pinterest'
   end
 end

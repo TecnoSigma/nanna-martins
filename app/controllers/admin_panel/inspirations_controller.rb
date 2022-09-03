@@ -5,7 +5,7 @@ class AdminPanel::InspirationsController < AdminPanel::DashboardController
 
   def index; end
 
-  def list
-
+  def pinterest
+    @pins = Pin.all
   end
 end

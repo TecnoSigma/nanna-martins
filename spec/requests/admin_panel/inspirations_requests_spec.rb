@@ -16,29 +16,11 @@ RSpec.describe AdminPanel::InspirationsController, type: :request do
       end
     end
 
-    describe '#list' do
-      context 'when pass allowed inspirations kind' do
-        Inspiration::ALLOWED_KINDS.each do |kind|
-          it "renders inspirations page (#{kind})" do
-            get "/administrador/inspiracoes/#{kind}/listar"
+    describe '#pinterest' do
+      it 'renders pinterest page' do
+        get '/administrador/inspiracoes/pinterest'
 
-            expect(response).to render_template(:list)
-          end
-        end
-      end
-
-      context 'when no pass allowed inspirations kind' do
-        it 'shows error message' do
-          get "/administrador/inspiracoes/not_allowed_kind/listar"
-
-          expect(flash[:alert]).to eq('Tipo de inspiração não permitido!')
-        end
-
-        it 'redirects to page of inspirations choose' do
-          get "/administrador/inspiracoes/not_allowed_kind/listar"
-
-          expect(response).to redirect_to(admin_panel_inspiracoes_path)
-        end
+        expect(response).to render_template(:pinterest)
       end
     end
   end

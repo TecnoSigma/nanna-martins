@@ -1,0 +1,13 @@
+<div class="row justify-content-md-center">
+  <% @pins.each do |pin| %>
+    <div class="col-lg-6 col-md-6">
+      <div class="card">
+        <%= link_to pin.url, target: '_blank', rel: 'nofollow' do %>
+          <div class="card-body">
+            <%= image_tag pin.url, class: 'inspirations-image' %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>

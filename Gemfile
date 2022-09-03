@@ -3,7 +3,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.0.3'
+ruby '3.0.4'
 
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'carmen'
@@ -16,6 +16,7 @@ gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.11'
 gem 'rails', '~> 6.1'
 gem 'rails-observers'
+gem 'rest-client'
 gem 'sass-rails', '~> 5.0'
 gem 'settingslogic'
 gem 'turbolinks', '~> 5'
@@ -25,6 +26,7 @@ gem 'watir'
 group :development, :test do
   gem 'binding_of_caller'
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'dotenv-rails'
   gem 'factory_bot_rails'
   gem 'faker'
   gem 'pry'
